@@ -143,7 +143,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             fighter.SetControllerEnabled(false);
             fighter.EnableImmunity(immunity);
             body.velocity = new Vector2(-Directional(force.x) * 3, force.y * 3);
-            body.mass = 1000000;
+            body.mass = 100;
             CurrentSpeed = 0f;
         }
 
@@ -228,6 +228,10 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public GameObject LaunchProjectile(string name, Move move) {
             return LaunchProjectile(name, move, Vector3.zero);
+        }
+
+        public void SetGuarded(bool guarded) {
+            fighter.IsGuarded = guarded;
         }
     }
 }

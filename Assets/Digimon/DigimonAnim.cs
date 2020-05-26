@@ -21,6 +21,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             }
 
             float speed = fighter.Movement.CurrentSpeed;
+            SetGuarded(fighter.IsGuarded);
 
             if (fighter.Movement.IsGrounded) {
                 if (speed == 0) {
@@ -69,6 +70,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
         public void SetBeingAirborne(bool airborne) {
             animator.SetBool("airborne", airborne);
+        }
+        public void SetGuarded(bool guarded) {
+            animator.SetBool("guarded", guarded);
         }
 
         private IEnumerator FlashImmunity() {

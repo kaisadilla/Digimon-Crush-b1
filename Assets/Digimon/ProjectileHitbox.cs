@@ -13,16 +13,20 @@ namespace Kaisa.DigimonCrush.Fighter {
                 DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
                 if (!f.IsImmune) {
                     f.StartHit(Move.Damage, owner.bounds.center);
-                    hits++;
-                    f.EndHit();
-                    if (hits == Move.KnockbackCount) {
-                        if (Move.Knockback.y == 0) {
-                            f.Movement.ApplyKnockback(Move.Knockback.x, Move.Immunity);
-                        }
-                        else {
-                            f.Movement.ApplyAirborne(Move.Knockback, Move.Immunity);
+                    bool isHit = f.EndHit();
+
+                    if(isHit) {
+                        hits++;
+                        if (hits == Move.KnockbackCount) {
+                            if (Move.Knockback.y == 0) {
+                                f.Movement.ApplyKnockback(Move.Knockback.x, Move.Immunity);
+                            }
+                            else {
+                                f.Movement.ApplyAirborne(Move.Knockback, Move.Immunity);
+                            }
                         }
                     }
+
                     Destroy(gameObject);
                 }
             }

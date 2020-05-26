@@ -38,52 +38,58 @@ namespace Kaisa.DigimonCrush.Fighter {
                 jumpBufferTime = JUMP_BUFFER;
             }
 
+            //TODO: Player should be able to drop through platforms (currently blocked by SetGuarded() ), and not continue walking when using pepper breath.
+            //TODO: Maybe player changes physicsmaterial2d while knocked back so it doesn't stuck with the other player.
             if (ControlEnabled) {
+                if (Input.GetAxisRaw(keys["vertical"]) < 0) {
+                    if (fighter.CurrentEnergy > 0.2f) {
+                        Movement.SetGuarded(true);
+                        Movement.SetSpeed(0);
+                    }
+                }
+                else {
+                    Movement.SetGuarded(false);
+                }
+
                 if (Input.GetButtonDown(keys["attack"])) {
+                    Movement.SetGuarded(false);
                     UseAttack();
                 }
-                else if (jumpBufferTime > 0f && Movement.IsGrounded) {
+
+                if (jumpBufferTime > 0f && Movement.IsGrounded) {
                     jumpBufferTime = 0f;
                     if (Input.GetAxisRaw(keys["vertical"]) < 0) {
                         Movement.DropThroughPlatform();
                     }
                     else {
-                        Movement.Jump();
+                        if (!fighter.IsGuarded) Movement.Jump();
                     }
                 }
-                else if (Input.GetButtonUp(keys["jump"]) && !Input.GetButton(keys["vertical"])) {
-                    Movement.StopJump();
-                }
-                else if (Input.GetButton(keys["horizontal"])) {
-                    moveX = Input.GetAxisRaw(keys["horizontal"]);
-                    if(Movement.IsGrounded) {
-                        if (Input.GetButton(keys["run"])) moveX *= 1.5f;
+                else if (!fighter.IsGuarded) {
+                    if (Input.GetButtonUp(keys["jump"]) && !Input.GetButton(keys["vertical"])) {
+                        Movement.StopJump();
                     }
-                    else {
-                        moveX *= 0.75f;
+                    else if (Input.GetButton(keys["horizontal"])) {
+                        moveX = Input.GetAxisRaw(keys["horizontal"]);
+                        if (Movement.IsGrounded) {
+                            if (Input.GetButton(keys["run"])) moveX *= 1.5f;
+                        }
+                        else {
+                            moveX *= 0.75f;
+                        }
+                        Movement.SetSpeed(moveX);
                     }
-                    Movement.SetSpeed(moveX);
-                }
-                else if (Input.GetButtonUp(keys["horizontal"])) {
-                    Movement.SetSpeed(0);
-                }
-                else if (Movement.IsGrounded && Input.GetAxisRaw(keys["vertical"]) < 0) {
-                    if(fighter.currentEnergy > 0) {
-                        fighter.currentEnergy -= Time.deltaTime;
+                    else if (Input.GetButtonUp(keys["horizontal"])) {
+                        Movement.SetSpeed(0);
                     }
                 }
-                else {
-                    if(fighter.currentEnergy < fighter.maxEnergy) {
-                        fighter.currentEnergy += 0.25f * Time.deltaTime;
-                    }
-                }
-
-                if (fighter.Player == 1 && Input.GetKeyDown(KeyCode.F)) {
-                    Movement.ApplyAirborne(new Vector2(5, 5));
-                }
-                if (fighter.Player == 1 && Input.GetKeyDown(KeyCode.G)) {
-                    Movement.ApplyKnockback(4);
-                }
+            }
+            //DEBUG: REMOVE
+            if (Input.GetKeyDown(KeyCode.F)) {
+                Movement.ApplyAirborne(new Vector2(5, 5));
+            }
+            if (Input.GetKeyDown(KeyCode.G)) {
+                Movement.ApplyKnockback(4);
             }
 
         }
