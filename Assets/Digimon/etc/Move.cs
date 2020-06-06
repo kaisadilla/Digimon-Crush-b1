@@ -61,6 +61,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public virtual void OnInterrupt() { }
         public virtual void OnHit() { }
         public virtual void OnFire() { }
+        public virtual void OnAttackCollision(Collider2D collision) { }
         public virtual void CallEffect(string effect) { }
 
         public void IncreaseHitCount() {

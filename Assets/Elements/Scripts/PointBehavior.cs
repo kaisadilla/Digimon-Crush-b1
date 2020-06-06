@@ -17,11 +17,10 @@ namespace Kaisa.DigimonCrush {
         private bool isBig;
 
         public void Start() {
-            Launch();
             StartCoroutine(EnablePickupPoint());
         }
 
-        public void SetupPoint(int player, bool isBig) {
+        public void SetupPoint(int player, bool isBig, bool launch = true) {
             isDiamond = false;
             this.player = player;
             this.isBig = isBig;
@@ -32,11 +31,19 @@ namespace Kaisa.DigimonCrush {
             else {
                 sprite.sprite = point[player];
             }
+
+            if (launch) {
+                Launch();
+            }
         }
 
-        public void SetupDiamond() {
+        public void SetupDiamond(bool launch = true) {
             isDiamond = true;
             sprite.sprite = diamond;
+
+            if (launch) {
+                Launch();
+            }
         }
 
         private void Launch() {

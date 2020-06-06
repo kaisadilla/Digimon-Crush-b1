@@ -224,29 +224,32 @@ namespace Kaisa.DigimonCrush.Fighter {
 
             int pointsToLaunch = HPbefore - HPafter;
             while (pointsToLaunch > 0) {
-                GameObject goPoint = Instantiate(pPoint, transform.position, Quaternion.Euler(0, 0, 0));
-                PointBehavior p = goPoint.GetComponent<PointBehavior>();
-
-                //p.SetupPoint(Player, false);
-                //pointsToLaunch--;
-
                 if (pointsToLaunch >= 3) {
-                    p.SetupPoint(Player, true);
+                    SpawnPoint(transform.position, true, true);
                     pointsToLaunch -= 3;
                 }
                 else {
-                    p.SetupPoint(Player, false);
+                    SpawnPoint(transform.position, false, true);
                     pointsToLaunch--;
                 }
             }
 
             if (Random.Range(0, 5) == 0) {
-                GameObject goPoint = Instantiate(pPoint, transform.position, Quaternion.Euler(0, 0, 0));
-                PointBehavior p = goPoint.GetComponent<PointBehavior>();
-                p.SetupDiamond();
+                SpawnDiamond(transform.position);
             }
 
             if (CurrentHP <= 0) Debug.Log($"Player {Player} has lost!");
+        }
+
+        public virtual void SpawnPoint(Vector3 position, bool big, bool forOpponent, bool launch = true) {
+            GameObject goPoint = Instantiate(pPoint, position, Quaternion.Euler(0, 0, 0));
+            PointBehavior p = goPoint.GetComponent<PointBehavior>();
+            p.SetupPoint(forOpponent ? Player : GetOppositePlayerIndex(), big, launch);
+        }
+        public virtual void SpawnDiamond(Vector3 position, bool launch = true) {
+            GameObject goPoint = Instantiate(pPoint, position, Quaternion.Euler(0, 0, 0));
+            PointBehavior p = goPoint.GetComponent<PointBehavior>();
+            p.SetupDiamond(launch);
         }
 
         public bool EndHit() {
@@ -277,11 +280,14 @@ namespace Kaisa.DigimonCrush.Fighter {
             if (Player == 0) {
                 return GameManager.Instance.player1;
             }
-            else if (Player == 1) {
+            else {
                 return GameManager.Instance.player0;
             }
-            
-            return null;
+        }
+
+        public int GetOppositePlayerIndex() {
+            if (Player == 0) return 1;
+            else return 0;
         }
     }
 }

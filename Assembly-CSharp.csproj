@@ -77,6 +77,11 @@
     <Compile Include="Assets\Digimon\Agumon\behavior\moves\Agumon_Uppercut.cs" />
     <Compile Include="Assets\Digimon\Agumon\behavior\moves\Projectile_BabyBurner.cs" />
     <Compile Include="Assets\Digimon\Agumon\behavior\moves\Projectile_PepperBreath.cs" />
+    <Compile Include="Assets\Digimon\BlackAgumon\behavior\BlackAgumonAudio.cs" />
+    <Compile Include="Assets\Digimon\BlackAgumon\behavior\BlackAgumonMovement.cs" />
+    <Compile Include="Assets\Digimon\BlackAgumon\behavior\moves\BlackAgumon_NegativeCrunch.cs" />
+    <Compile Include="Assets\Digimon\BlackAgumon\behavior\moves\BlackAgumon_PepperBreath.cs" />
+    <Compile Include="Assets\Digimon\BlackAgumon\behavior\moves\BlackAgumon_PepperBreath_Flying.cs" />
     <Compile Include="Assets\Digimon\Gatomon\behavior\GatomonAudio.cs" />
     <Compile Include="Assets\Digimon\Gatomon\behavior\GatomonMovement.cs" />
     <Compile Include="Assets\Digimon\Gatomon\behavior\moves\Gatomon_CatTail.cs" />

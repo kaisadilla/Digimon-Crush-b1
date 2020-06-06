@@ -56,7 +56,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         protected override void EnterCollisionWithAttack(Collider2D collision) {
-
+            Move.OnAttackCollision(collision);
         }
     }
 }
