@@ -162,7 +162,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             body.velocity = new Vector2(body.velocity.x, JumpSpeed * amount);
         }
 
-        public void ResetAirJump() {
+        public virtual void ResetAirJump() {
             AirJumpAllowed = true;
         }
 

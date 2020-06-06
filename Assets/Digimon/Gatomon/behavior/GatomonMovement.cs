@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Kaisa.DigimonCrush.Fighter {
     public class GatomonMovement : DigimonMovement {
+        private bool AirDashAllowed = false;
         // regular
         public override Move OnAttack0() => new Gatomon_LightningPaw(fighter);
         // horizontal
@@ -22,5 +23,17 @@ namespace Kaisa.DigimonCrush.Fighter {
         public override Move OnAttack7() => new Gatomon_CatsEye(fighter);
         // running + horizontal
         public override Move OnAttack8() => new Gatomon_Nekodamashi(fighter);
+
+        public override void UseAttack5() {
+            if (AirDashAllowed) {
+                AirDashAllowed = false;
+                Move m = OnAttack5();
+                AssignMove(m);
+            }
+        }
+        public override void ResetAirJump() {
+            AirJumpAllowed = true;
+            AirDashAllowed = true;
+        }
     }
 }

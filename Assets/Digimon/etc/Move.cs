@@ -38,7 +38,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public float PointConversion { get; protected set; } = 0.5f;
 
-        public bool FriendlyFire { get; protected set; } = false;
+        public bool FriendlyFire { get; protected set; } = true;
         public bool IgnoreGuard { get; protected set; } = false;
         /// <summary>
         /// An id used to identify this attack between all the attacks of the same digimon. Used to group cooldowns.

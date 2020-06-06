@@ -8,7 +8,8 @@ namespace Kaisa.DigimonCrush.Fighter {
             AnimName = "attack_nekoRush";
             Damage = 4f;
             Knockback = new Vector2(6, 2);
-            Cooldown = 2f;
+            //InternalId = 0;
+            //Cooldown = 2f;
         }
 
         public override void OnUpdate() {

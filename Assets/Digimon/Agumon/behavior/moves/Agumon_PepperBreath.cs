@@ -15,7 +15,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public override void OnFire() {
             float x = 0f;
-            float y = 0.8f;
+            float y = -0.8f;
             user.Movement.LaunchProjectile("agumon/pepper_breath", this, x, y);
         }
 

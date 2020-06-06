@@ -21,7 +21,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         protected void EndHit(Collider2D collision) {
-            if (collision != owner || Move.FriendlyFire) {
+            if (collision != owner) {
                 DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
                 bool isHit = f.EndHit();
 
