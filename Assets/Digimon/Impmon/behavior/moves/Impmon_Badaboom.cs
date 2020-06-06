@@ -4,11 +4,11 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Impmon_Badaboom : Move {
         public Impmon_Badaboom(DigimonFighter user) : base(user) {
             AnimName = "attack_badaboom";
-            Damage = 5f;
+            BaseDamage = 5f;
             KnockbackCount = -1;
             Speed = 14f;
             Duration = 3f;
-            FriendlyFire = true;
+            EndOnEnter = true;
         }
 
         public override void OnFire() {

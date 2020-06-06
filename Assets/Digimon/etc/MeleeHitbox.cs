@@ -27,7 +27,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
                 if (isHit) {
                     hits++;
-                    Move.OnHit();
+                    Move.OnHit(f);
 
                     if (Move.KnockbackMode == KnockbackMode.Stack) {
                         if (isHit) {

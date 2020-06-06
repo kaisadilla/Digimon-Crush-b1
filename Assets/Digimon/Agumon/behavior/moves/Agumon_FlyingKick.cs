@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Agumon_FlyingKick : Move {
         public Agumon_FlyingKick(DigimonFighter user) : base(user) {
             AnimName = "attack_flyingKick";
-            Damage = 5f;
+            BaseDamage = 5f;
             Knockback = new Vector2(4, 2);
             KnockbackCount = 2;
         }

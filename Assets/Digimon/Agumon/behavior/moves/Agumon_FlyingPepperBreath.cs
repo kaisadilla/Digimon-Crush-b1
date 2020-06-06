@@ -7,7 +7,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public static GameObject projectile;
         public Agumon_FlyingPepperBreath(DigimonFighter user) : base(user) {
             AnimName = "attack_flyingPepperBreath";
-            Damage = 10f;
+            BaseDamage = 10f;
             Knockback = new Vector2(3, 2);
             KnockbackCount = 1;
             Speed = 12f;

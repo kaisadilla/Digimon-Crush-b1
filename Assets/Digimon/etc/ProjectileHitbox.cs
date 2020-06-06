@@ -18,29 +18,41 @@ namespace Kaisa.DigimonCrush.Fighter {
                 DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
                 if (!f.IsImmune) {
                     f.StartHit(Move, owner.bounds.center, Move.PointConversion);
-                    bool isHit = f.EndHit(Move);
-
-                    if(isHit) {
-                        hits++;
-                        Move.OnHit();
-                        ExtraEffects(f);
-                        if (hits == Move.KnockbackCount) {
-                            if (Move.Knockback.y == 0) {
-                                f.Movement.ApplyKnockback(Move.Knockback.x, Move.Immunity);
-                            }
-                            else {
-                                f.Movement.ApplyAirborne(Move.Knockback, Move.Immunity);
-                            }
-                        }
+                    if (Move.EndOnEnter) {
+                        EndHit(f);
                     }
-
-                    Destroy(gameObject);
                 }
             }
         }
         protected override void ExitCollisionWithPlayer(Collider2D collision) {
-
+            DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
+            if (!Move.EndOnEnter) {
+                EndHit(f);
+            }
         }
+
+        protected void EndHit(DigimonFighter f) {
+            bool isHit = f.EndHit(Move);
+
+            if (isHit) {
+                hits++;
+                Move.OnHit(f);
+                //ExtraEffects(f);
+                if (hits == Move.KnockbackCount) {
+                    if (Move.Knockback.y == 0) {
+                        f.Movement.ApplyKnockback(Move.Knockback.x, Move.Immunity);
+                    }
+                    else {
+                        f.Movement.ApplyAirborne(Move.Knockback, Move.Immunity);
+                    }
+                }
+            }
+
+            if (Move.MaxHits > 0 && hits >= Move.MaxHits) {
+                Destroy(gameObject);
+            }
+        }
+
         protected override void EnterCollisionWithAttack(Collider2D collision) {
             if (collision.GetComponent<AttackHitbox>() is MeleeHitbox meleeH) {
                 if (meleeH.Move.GetDamage() >= Move.GetDamage()) Destroy(gameObject);

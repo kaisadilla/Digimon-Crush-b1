@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Gatomon_NekoRush : Move {
         public Gatomon_NekoRush(DigimonFighter user) : base(user) {
             AnimName = "attack_nekoRush";
-            Damage = 4f;
+            BaseDamage = 4f;
             Knockback = new Vector2(6, 2);
             //InternalId = 0;
             //Cooldown = 2f;

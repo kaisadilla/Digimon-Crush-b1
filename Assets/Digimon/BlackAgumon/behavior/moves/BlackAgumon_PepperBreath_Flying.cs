@@ -7,11 +7,12 @@ namespace Kaisa.DigimonCrush.Fighter {
         public static GameObject projectile;
         public BlackAgumon_PepperBreath_Flying(DigimonFighter user) : base(user) {
             AnimName = "attack_pepperBreath_flying";
-            Damage = 10f;
+            BaseDamage = 10f;
             Knockback = new Vector2(3, 2);
             KnockbackCount = 1;
             Speed = 12f;
             Duration = 1f;
+            EndOnEnter = true;
         }
 
         public override void OnStart() {

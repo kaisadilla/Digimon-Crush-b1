@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public Greymon_FlyingAntler(DigimonFighter user) : base(user) {
             AnimName = "attack_flyingAntler";
-            Damage = 8f;
+            BaseDamage = 8f;
             Knockback = new Vector2(8, 2);
             EndOnEnter = true;
         }

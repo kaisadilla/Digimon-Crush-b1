@@ -6,10 +6,11 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Greymon_MegaFlame : Move {
         public Greymon_MegaFlame(DigimonFighter user) : base(user) {
             AnimName = "attack_megaFlame";
-            Damage = 12f;
+            BaseDamage = 12f;
             Knockback = new Vector2(4, 2);
             Speed = 12f;
             Duration = 1.35f;
+            EndOnEnter = true;
         }
 
         public override void OnFire() {

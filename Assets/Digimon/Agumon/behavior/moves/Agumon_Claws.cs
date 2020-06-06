@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Agumon_Claws : Move {
         public Agumon_Claws(DigimonFighter user) : base(user) {
             AnimName = "attack_claws";
-            Damage = 3f;
+            BaseDamage = 3f;
             Knockback = new Vector2(4, 0);
             KnockbackCount = 2;
             BufferTime = 0.5f;

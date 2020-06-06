@@ -97,6 +97,10 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public bool Paralyzed { get; protected set; } = false;
         public bool Burned { get; protected set; } = false;
+        public float Slow { get; protected set; } = 0f;
+        public bool IsSlowed => Slow > 0f;
+        public float Smash { get; protected set; } = 1f;
+        public bool IsSmashed => Smash < 1f;
 
         public void ApplyParalyze(float duration) {
             if (!IsImmune && !Paralyzed) {
@@ -131,6 +135,23 @@ namespace Kaisa.DigimonCrush.Fighter {
             Movement.SetSpeed(0);
             yield return new WaitForSeconds(Constants.DEFAULT_IMMUNITY / 2f);
             IsImmune = false;
+        }
+
+        public void ApplySlow(float amount, float duration) {
+            Slow = amount;
+            StartCoroutine(EndSlow(duration));
+        }
+        private IEnumerator EndSlow(float duration) {
+            yield return new WaitForSeconds(duration);
+            Slow = 0f;
+        }
+        public void ApplySmash(float amount, float duration) {
+            Smash = amount;
+            StartCoroutine(EndSmash(duration));
+        }
+        private IEnumerator EndSmash(float duration) {
+            yield return new WaitForSeconds(duration);
+            Smash = 1f;
         }
 
         public float Scale {
@@ -263,15 +284,15 @@ namespace Kaisa.DigimonCrush.Fighter {
             if (CurrentHP <= 0) Debug.Log($"Player {Player} has lost!");
         }
 
-        public virtual void SpawnPoint(Vector3 position, bool big, bool forOpponent, bool launch = true) {
+        public virtual void SpawnPoint(Vector3 position, bool big, bool forOpponent, bool launch = true, float pickupTime = 0.5f) {
             GameObject goPoint = Instantiate(pPoint, position, Quaternion.Euler(0, 0, 0));
             PointBehavior p = goPoint.GetComponent<PointBehavior>();
-            p.SetupPoint(forOpponent ? Player : GetOppositePlayerIndex(), big, launch);
+            p.SetupPoint(forOpponent ? Player : GetOppositePlayerIndex(), big, launch, pickupTime);
         }
-        public virtual void SpawnDiamond(Vector3 position, bool launch = true) {
+        public virtual void SpawnDiamond(Vector3 position, bool launch = true, float pickupTime = 0.5f) {
             GameObject goPoint = Instantiate(pPoint, position, Quaternion.Euler(0, 0, 0));
             PointBehavior p = goPoint.GetComponent<PointBehavior>();
-            p.SetupDiamond(launch);
+            p.SetupDiamond(launch, pickupTime);
         }
 
         public void GatherPoint(int player, bool isBig) {

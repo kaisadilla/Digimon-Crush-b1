@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Gatomon_CatTail : Move {
         public Gatomon_CatTail(DigimonFighter user) : base(user) {
             AnimName = "attack_catTail";
-            Damage = 5f;
+            BaseDamage = 5f;
             Knockback = new Vector2(3, 4);
         }
     }

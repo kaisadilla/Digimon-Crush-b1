@@ -5,14 +5,14 @@ namespace Kaisa.DigimonCrush.Fighter {
         public bool ExplosionHit { get; private set; } = false;
         public Impmon_ImpExplosion(DigimonFighter user) : base(user) {
             AnimName = "attack_impExplosion";
-            Damage = 12f;
+            BaseDamage = 12f;
             Knockback = new Vector2(7, 7);
             EndOnEnter = true;
             PointConversion = 1f;
             IgnoreGuard = true;
         }
 
-        public override void OnHit() {
+        public override void OnHit(DigimonFighter target) {
             ExplosionHit = true;
         }
 

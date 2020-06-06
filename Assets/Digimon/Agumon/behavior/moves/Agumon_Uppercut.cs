@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Agumon_Uppercut : Move {
         public Agumon_Uppercut(DigimonFighter user) : base(user) {
             AnimName = "attack_uppercut";
-            Damage = 5f;
+            BaseDamage = 5f;
             Knockback = new Vector2(2, 5);
             KnockbackCount = 1;
             EndOnEnter = true;

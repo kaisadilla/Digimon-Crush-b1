@@ -16,7 +16,6 @@ namespace Kaisa.DigimonCrush.Fighter {
                 Travel();
                 duration += Time.deltaTime;
                 if (duration > move.Duration) {
-                    Debug.Log("destroyed");
                     Destroy(gameObject);
                 }
             }

@@ -5,6 +5,9 @@ public static class Constants {
     public const float DEFAULT_IMMUNITY = 1f;
     public const int layerPlayer = 11;
     public const int layerGhostedPlayer = 12; //A layer for characters that are ghosted (do not collide with other characters).
+
+    public static readonly Color defaultColor = Color.white;
+    public static readonly Color slowColor = Color.cyan;
 }
 
 public enum PlayerState {

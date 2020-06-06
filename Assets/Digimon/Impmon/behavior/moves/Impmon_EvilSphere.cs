@@ -7,11 +7,12 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public Impmon_EvilSphere(DigimonFighter user) : base(user) {
             AnimName = "attack_evilSphere";
-            Damage = 10f;
+            BaseDamage = 10f;
             Knockback = new Vector2(6, 4);
             Speed = 14f;
             Duration = 4f;
             IgnoreGuard = true;
+            EndOnEnter = true;
         }
 
         public override void OnFire() {

@@ -16,11 +16,7 @@ namespace Kaisa.DigimonCrush {
         private int player;
         private bool isBig;
 
-        public void Start() {
-            StartCoroutine(EnablePickupPoint());
-        }
-
-        public void SetupPoint(int player, bool isBig, bool launch = true) {
+        public void SetupPoint(int player, bool isBig, bool launch = true, float pickupTime = 0.5f) {
             isDiamond = false;
             this.player = player;
             this.isBig = isBig;
@@ -35,15 +31,17 @@ namespace Kaisa.DigimonCrush {
             if (launch) {
                 Launch();
             }
+            StartCoroutine(EnablePickupPoint(pickupTime));
         }
 
-        public void SetupDiamond(bool launch = true) {
+        public void SetupDiamond(bool launch = true, float pickupTime = 0.5f) {
             isDiamond = true;
             sprite.sprite = diamond;
 
             if (launch) {
                 Launch();
             }
+            StartCoroutine(EnablePickupPoint(pickupTime));
         }
 
         private void Launch() {
@@ -55,8 +53,8 @@ namespace Kaisa.DigimonCrush {
             body.velocity = new Vector2(forceX, forceY);
         }
 
-        private IEnumerator EnablePickupPoint() {
-            yield return new WaitForSeconds(0.5f);
+        private IEnumerator EnablePickupPoint(float pickupTime = 0.5f) {
+            yield return new WaitForSeconds(pickupTime);
             canBePicked = true;
             yield return new WaitForSeconds(5f);
             Destroy(gameObject);

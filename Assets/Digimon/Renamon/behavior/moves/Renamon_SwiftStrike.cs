@@ -4,7 +4,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Renamon_SwiftStrike : Move {
         public Renamon_SwiftStrike(DigimonFighter user) : base(user) {
             AnimName = "attack_swiftStrike";
-            Damage = 6f;
+            BaseDamage = 6f;
             Knockback = new Vector2(7, 0);
             EndOnEnter = true;
         }

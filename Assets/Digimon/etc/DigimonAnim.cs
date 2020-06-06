@@ -15,6 +15,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         private void Update() {
+            float scaleVal = fighter.Scale;
+            Vector3 scale;
+
             if (fighter.Paralyzed) {
                 animator.speed = 0f;
                 return;
@@ -30,19 +33,30 @@ namespace Kaisa.DigimonCrush.Fighter {
                 burn.SetActive(false);
             }
 
+            if (fighter.IsSlowed) {
+                sprite.color = Constants.slowColor;
+            }
+            else {
+                sprite.color = Constants.defaultColor;
+            }
+
+            if (fighter.IsSmashed) {
+                scale = new Vector3(scaleVal, scaleVal * fighter.Smash, 1);
+            }
+            else {
+                scale = new Vector3(scaleVal, scaleVal, 1);
+            }
 
             //animator.speed = !fighter.Paralyzed ? 1f : 0f;
-
-            float scale = fighter.Scale;
 
             float walkSpeed = fighter.Movement.ExtraSpeed;//fighter.Movement.IsRunning ? 1.5f : 1f;
             animator.SetFloat("walk_speed", walkSpeed);
 
             if (fighter.Movement.FacingLeft) {
-                fighter.transform.localScale = new Vector3(-scale, scale, scale);
+                fighter.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
             }
             else {
-                fighter.transform.localScale = new Vector3(scale, scale, scale);
+                fighter.transform.localScale = scale;
             }
 
             float speed = fighter.Movement.CurrentSpeed;

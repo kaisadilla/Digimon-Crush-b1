@@ -4,7 +4,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Impmon_DimensionalDash : Move {
         public Impmon_DimensionalDash(DigimonFighter user) : base(user) {
             AnimName = "attack_dimensionalDash";
-            Damage = 4f;
+            BaseDamage = 4f;
             Knockback = new Vector2(0, 5);
             EndOnEnter = true;
             Cooldown = 2f;

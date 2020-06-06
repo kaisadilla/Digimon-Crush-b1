@@ -4,7 +4,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Renamon_Kohenkyo : Move {
         public Renamon_Kohenkyo(DigimonFighter user) : base(user) {
             AnimName = "attack_kohenkyo";
-            Damage = 4f;
+            BaseDamage = 4f;
             Knockback = new Vector2(0, 5);
             EndOnEnter = true;
             InternalId = 0;

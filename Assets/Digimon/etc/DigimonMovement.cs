@@ -20,6 +20,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public bool IsKnockedBack { get; protected set; }
         public bool IsAirborne { get; protected set; }
         public bool AirJumpAllowed { get; protected set; } = true;
+        public bool AirDashAllowed { get; protected set; } = true;
 
         public float[] Cooldowns { get; protected set; } = new float[10];
 
@@ -37,7 +38,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public bool IsRunning { get; set; }
 
-        public float MoveSpeed => baseSpeed * ExtraSpeed;
+        public float MoveSpeed => baseSpeed * ExtraSpeed * (1f - fighter.Slow);
 
         public float ExtraSpeed {
             get {
@@ -164,6 +165,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public virtual void ResetAirJump() {
             AirJumpAllowed = true;
+            AirDashAllowed = true;
         }
 
         public void StopJump(float amount = 0.5f) {
@@ -277,11 +279,11 @@ namespace Kaisa.DigimonCrush.Fighter {
             EndCurrentMove();
         }
 
-        public GameObject LaunchProjectile(string name, Move move, float offsetX, float offsetY) {
+        public GameObject LaunchProjectile(string name, Move move, float offsetX, float offsetY, bool oppositeSide = false) {
             GameObject prefab = Resources.Load<GameObject>($"moves/projectiles/{name}");
             Vector3 offset = new Vector3(Directional(-offsetX), -offsetY, 0);
             GameObject p = Instantiate(prefab, transform.position - offset, Quaternion.Euler(0, 0, 0), null);
-            p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, FacingLeft, fighter.Scale);
+            p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, FacingLeft ^ oppositeSide, fighter.Scale); //xor: ^
             return p;
         }
 

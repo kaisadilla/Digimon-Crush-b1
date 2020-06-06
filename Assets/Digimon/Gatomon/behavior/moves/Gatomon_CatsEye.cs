@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Gatomon_CatsEye : Move {
         public Gatomon_CatsEye(DigimonFighter user) : base(user) {
             AnimName = "attack_catsEye";
-            Damage = 5f;
+            BaseDamage = 5f;
             KnockbackCount = 0;
             Speed = 12f;
             Duration = 0.85f;

@@ -5,10 +5,11 @@ namespace Kaisa.DigimonCrush.Fighter {
         private bool launched;
         public Renamon_DiamondStorm_Flying(DigimonFighter user) : base(user) {
             AnimName = "attack_diamondStorm";
-            Damage = 10f;
+            BaseDamage = 10f;
             Knockback = new Vector2(4, 2);
             Speed = 12f;
             Duration = 1f;
+            EndOnEnter = true;
         }
 
         public override void OnUpdate() {
@@ -23,7 +24,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             user.Movement.PushBack(new Vector2(1f, 1f));
         }
 
-        public override void OnHit() {
+        public override void OnHit(DigimonFighter target) {
             user.EnableImmunity(3f);
             user.DisableImmunity();
         }
