@@ -31,11 +31,8 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
         // jump + horizontal
         public override void UseAttack5() {
-            if (Cooldowns[5] <= 0f) {
-                Cooldowns[5] = 2f;
-                CurrentMove = new Impmon_DimensionalDash(fighter);
-                StartCurrentMove();
-            }
+            CurrentMove = new Impmon_BasicAttack(fighter);
+            StartCurrentMove();
         }
         // jump + up
         public override void UseAttack6() {

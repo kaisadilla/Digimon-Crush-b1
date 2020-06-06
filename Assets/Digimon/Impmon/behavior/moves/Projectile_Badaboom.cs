@@ -9,7 +9,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         protected override void OnStart() {
             initialX = transform.position.x;
             float speedX = goingLeft ? -move.Speed : move.Speed;
-            body.velocity = new Vector2(speedX, -2);
+            body.velocity = new Vector2(speedX, -4);
         }
 
         protected override void Travel() { }

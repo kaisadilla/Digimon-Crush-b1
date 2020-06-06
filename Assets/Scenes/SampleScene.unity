@@ -2956,6 +2956,7 @@ MonoBehaviour:
   digimon:
   - {fileID: 5845724381668962242, guid: 150bead59b2ea7d4097cb0f1b34f501c, type: 3}
   - {fileID: 3471127912766532539, guid: e4cbbda37aa7a5848bc11159b578e257, type: 3}
+  - {fileID: 7824203094608267002, guid: daed19bdd674f5b4d993964f95a27ede, type: 3}
   position0: {fileID: 1913206599}
   position1: {fileID: 1086604903}
   healthBar0: {fileID: 463121963}

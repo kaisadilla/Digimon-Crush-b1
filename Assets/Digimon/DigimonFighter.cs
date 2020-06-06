@@ -102,6 +102,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             if (!IsImmune && !Paralyzed) {
                 Paralyzed = true;
                 Movement.body.gravityScale = 0f;
+                Movement.body.mass = 1000000;
                 Movement.SetSpeed(new Vector2(0f, 0f));
                 StartCoroutine(EndParalyze(duration));
             }
@@ -109,6 +110,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         private IEnumerator EndParalyze(float duration) {
             yield return new WaitForSeconds(duration);
             Movement.body.gravityScale = 3f;
+            Movement.body.mass = 1;
             Paralyzed = false;
         }
 

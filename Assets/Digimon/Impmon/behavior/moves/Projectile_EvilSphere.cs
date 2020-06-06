@@ -27,7 +27,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             float moveX = (goingLeft ? -move.Speed : move.Speed) * Time.deltaTime;
             float moveY;
 
-            moveY = (target?.transform.position.y > transform.position.y ? 5 : -5) * Time.deltaTime;
+            moveY = (target?.transform.position.y > transform.position.y ? 4 : -4) * Time.deltaTime;
 
             transform.position += new Vector3(moveX, moveY, 0);
             AdjustScale();
@@ -38,7 +38,6 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public void Fire() {
-            Debug.Log("fired");
             fired = true;
         }
     }
