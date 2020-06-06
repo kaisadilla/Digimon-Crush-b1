@@ -9,6 +9,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             Knockback = new Vector2(7, 7);
             EndOnEnter = true;
             PointConversion = 1f;
+            IgnoreGuard = true;
         }
 
         public override void OnHit() {

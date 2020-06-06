@@ -192,6 +192,7 @@ namespace Kaisa.DigimonCrush.Fighter {
                 OnDodgeHit(move, hitPos, pointConversion);
             }
             else {
+                if (IsGuarded) IsGuarded = false;
                 OnApplyHit(move, hitPos, pointConversion);
             }
         }
