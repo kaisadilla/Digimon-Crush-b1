@@ -19,7 +19,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public override void OnFire() {
-            user.Movement.LaunchProjectile("agumon/baby_burner", this, new Vector3(0, 1f, 0));
+            float x = 0f;
+            float y = -1f;
+            user.Movement.LaunchProjectile("agumon/baby_burner", this, x, y);
         }
 
         public override void CallEffect(string effect) {
@@ -29,7 +31,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         private void MoveUser() {
-            user.Movement.PushBack(-2f);
+            user.Movement.PushBack(2.65f);
         }
 
         private void LoadAttack() {

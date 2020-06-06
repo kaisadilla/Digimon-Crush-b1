@@ -16,7 +16,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public override void OnFire() {
-            user.Movement.LaunchProjectile("impmon/badaboom", this, new Vector3(-1.94f, -1.42f, 0));
+            float x = 1.94f;
+            float y = 1.42f;
+            user.Movement.LaunchProjectile("impmon/badaboom", this, x, y);
         }
     }
 }

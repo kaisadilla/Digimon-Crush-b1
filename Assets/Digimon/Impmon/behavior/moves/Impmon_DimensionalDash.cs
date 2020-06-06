@@ -8,6 +8,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             Knockback = new Vector2(0, 5);
             EndOnEnter = true;
             Cooldown = 2f;
+            InternalId = 0;
         }
 
         public override void OnFire() {

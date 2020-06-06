@@ -17,7 +17,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         public override void OnFire() {
             if (user.CurrentPower >= 2) {
                 user.CurrentPower -= 2;
-                GameObject go = user.Movement.LaunchProjectile("impmon/evil_sphere", this, new Vector3(-1.9f, 0.75f, 0));
+                float x = 1.9f;
+                float y = -0.75f;
+                GameObject go = user.Movement.LaunchProjectile("impmon/evil_sphere", this, x, y);
                 proj = go.GetComponent<Projectile_EvilSphere>();
                 proj.SetTarget(user.GetOppositePlayer());
             }

@@ -5,53 +5,22 @@ using UnityEngine;
 namespace Kaisa.DigimonCrush.Fighter {
     public class GreymonMovement : DigimonMovement {
         // regular
-        public override void UseAttack0() {
-            CurrentMove = new Greymon_HornAttack(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack0() => new Greymon_HornAttack(fighter);
         // horizontal
-        public override void UseAttack1() {
-            CurrentMove = new Greymon_HornAttack(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack1() => new Greymon_HornAttack(fighter);
         // up
-        public override void UseAttack2() {
-            //CurrentMove = new Agumon_BabyBurner(fighter);
-            //StartCurrentMove();
-        }
+        public override Move OnAttack2() => new Agumon_BabyBurner(fighter);
         // down
-        public override void UseAttack3() {
-            CurrentMove = new Greymon_MegaFlame(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack3() => new Greymon_MegaFlame(fighter);
         // Jump + regular
-        public override void UseAttack4() {
-            CurrentMove = new Greymon_HornAttack(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack4() => new Greymon_HornAttack(fighter);
         // jump + horizontal
-        public override void UseAttack5() {
-            CurrentMove = new Greymon_FlyingAntler(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack5() => new Greymon_FlyingAntler(fighter);
         // jump + up
-        public override void UseAttack6() {
-            if (AirJumpAllowed) {
-                AirJumpAllowed = false;
-                CurrentMove = new Greymon_HornAttack(fighter);
-                StartCurrentMove();
-            }
-        }
+        public override Move OnAttack6() => new Greymon_HornAttack(fighter);
         // jump + down
-        public override void UseAttack7() {
-            CurrentMove = new Greymon_MegaFlame(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack7() => new Greymon_MegaFlame(fighter);
         // running + horizontal
-        public override void UseAttack8() {
-            CurrentMove = new Greymon_GreatAntler(fighter);
-            //CurrentMove = new Greymon_SavageAntler(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack8() => new Greymon_GreatAntler(fighter);
     }
 }

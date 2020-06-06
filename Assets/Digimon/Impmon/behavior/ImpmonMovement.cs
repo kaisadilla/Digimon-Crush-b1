@@ -5,55 +5,22 @@ using UnityEngine;
 namespace Kaisa.DigimonCrush.Fighter {
     public class ImpmonMovement : DigimonMovement {
         // regular
-        public override void UseAttack0() {
-            CurrentMove = new Impmon_Badaboom(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack0() => new Impmon_Badaboom(fighter);
         // horizontal
-        public override void UseAttack1() {
-            CurrentMove = new Impmon_BasicAttack(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack1() => new Impmon_BasicAttack(fighter);
         // up
-        public override void UseAttack2() {
-            CurrentMove = new Impmon_EvilSphere(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack2() => new Impmon_EvilSphere(fighter);
         // down
-        public override void UseAttack3() {
-            CurrentMove = new Impmon_ImpExplosion(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack3() => new Impmon_ImpExplosion(fighter);
         // Jump + regular
-        public override void UseAttack4() {
-            CurrentMove = new Impmon_Badaboom_Flying(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack4() => new Impmon_Badaboom_Flying(fighter);
         // jump + horizontal
-        public override void UseAttack5() {
-            CurrentMove = new Impmon_BasicAttack(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack5() => new Impmon_BasicAttack(fighter);
         // jump + up
-        public override void UseAttack6() {
-            if (AirJumpAllowed) {
-                AirJumpAllowed = false;
-                CurrentMove = new Impmon_MagicUppercut(fighter);
-                StartCurrentMove();
-            }
-        }
+        public override Move OnAttack6() => new Impmon_MagicUppercut(fighter);
         // jump + down
-        public override void UseAttack7() {
-            CurrentMove = new Impmon_ImpExplosion(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack7() => new Impmon_ImpExplosion(fighter);
         // running + horizontal
-        public override void UseAttack8() {
-            if(Cooldowns[8] <= 0f) {
-                Cooldowns[8] = 2f;
-                CurrentMove = new Impmon_DimensionalDash(fighter);
-                StartCurrentMove();
-            }
-        }
+        public override Move OnAttack8() => new Impmon_DimensionalDash(fighter);
     }
 }

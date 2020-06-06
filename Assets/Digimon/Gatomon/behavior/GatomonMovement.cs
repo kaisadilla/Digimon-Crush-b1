@@ -5,52 +5,22 @@ using UnityEngine;
 namespace Kaisa.DigimonCrush.Fighter {
     public class GatomonMovement : DigimonMovement {
         // regular
-        public override void UseAttack0() {
-            CurrentMove = new Gatomon_LightningPaw(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack0() => new Gatomon_LightningPaw(fighter);
         // horizontal
-        public override void UseAttack1() {
-            CurrentMove = new Gatomon_LightningPaw(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack1() => new Gatomon_LightningPaw(fighter);
         // up
-        public override void UseAttack2() {
-            CurrentMove = new Gatomon_CatTail(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack2() => new Gatomon_CatTail(fighter);
         // down
-        public override void UseAttack3() {
-            CurrentMove = new Gatomon_CatsEye(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack3() => new Gatomon_CatsEye(fighter);
         // Jump + regular
-        public override void UseAttack4() {
-            CurrentMove = new Gatomon_LightningPaw_Flying(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack4() => new Gatomon_LightningPaw_Flying(fighter);
         // jump + horizontal
-        public override void UseAttack5() {
-            CurrentMove = new Gatomon_NekoRush(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack5() => new Gatomon_NekoRush(fighter);
         // jump + up
-        public override void UseAttack6() {
-            if (AirJumpAllowed) {
-                AirJumpAllowed = false;
-                CurrentMove = new Gatomon_CatTail_Flying(fighter);
-                StartCurrentMove();
-            }
-        }
+        public override Move OnAttack6() => new Gatomon_CatTail_Flying(fighter);
         // jump + down
-        public override void UseAttack7() {
-            CurrentMove = new Gatomon_CatsEye(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack7() => new Gatomon_CatsEye(fighter);
         // running + horizontal
-        public override void UseAttack8() {
-            CurrentMove = new Gatomon_Nekodamashi(fighter);
-            StartCurrentMove();
-        }
+        public override Move OnAttack8() => new Gatomon_Nekodamashi(fighter);
     }
 }
