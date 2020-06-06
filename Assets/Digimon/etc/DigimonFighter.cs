@@ -138,6 +138,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         private Coroutine endImmunity;
+        private Coroutine setController;
 
         private void Update() {
             if (IsGuarded) {
@@ -182,8 +183,18 @@ namespace Kaisa.DigimonCrush.Fighter {
             if (endImmunity != null) StopCoroutine(endImmunity);
             IsImmune = false;
         }
-        
-        public void SetControllerEnabled(bool enabled) {
+
+        public void SetControllerEnabled(bool enabled, float delay = 0f) {
+            if (setController != null) StopCoroutine(setController);
+            if (delay == 0f) {
+                Controller.ControlEnabled = enabled;
+            }
+            else {
+                setController = StartCoroutine(SetControllerEnabledAfterDelay(enabled, delay));
+            }
+        }
+        public IEnumerator SetControllerEnabledAfterDelay(bool enabled, float delay) {
+            yield return new WaitForSeconds(delay);
             Controller.ControlEnabled = enabled;
         }
 
@@ -196,6 +207,17 @@ namespace Kaisa.DigimonCrush.Fighter {
             else {
                 if (IsGuarded) IsGuarded = false;
                 OnApplyHit(move, hitPos, pointConversion);
+            }
+        }
+
+        public bool EndHit(Move move) {
+            if (!IsBeingHit) {
+                return false;
+            }
+            else {
+                IsBeingHit = false;
+                SetControllerEnabled(true, move.BufferTime);
+                return true;
             }
         }
 
@@ -250,17 +272,6 @@ namespace Kaisa.DigimonCrush.Fighter {
             GameObject goPoint = Instantiate(pPoint, position, Quaternion.Euler(0, 0, 0));
             PointBehavior p = goPoint.GetComponent<PointBehavior>();
             p.SetupDiamond(launch);
-        }
-
-        public bool EndHit() {
-            if (!IsBeingHit) {
-                return false;
-            }
-            else {
-                IsBeingHit = false;
-                SetControllerEnabled(true);
-                return true;
-            }
         }
 
         public void GatherPoint(int player, bool isBig) {

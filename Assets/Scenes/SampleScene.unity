@@ -2923,7 +2923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1209594657
 Transform:
   m_ObjectHideFlags: 0
@@ -2957,6 +2957,7 @@ MonoBehaviour:
   - {fileID: 3471127912766532539, guid: e4cbbda37aa7a5848bc11159b578e257, type: 3}
   - {fileID: 7824203094608267002, guid: daed19bdd674f5b4d993964f95a27ede, type: 3}
   - {fileID: 8251648753005744448, guid: c958e328693dcdb4baa54baa04e5e8c3, type: 3}
+  - {fileID: 1078335543751448028, guid: c59336b1fd1176542905cac0b0fb57f3, type: 3}
   position0: {fileID: 1913206599}
   position1: {fileID: 1086604903}
   healthBar0: {fileID: 463121963}
@@ -4625,7 +4626,7 @@ PrefabInstance:
     - target: {fileID: 8251648753005744448, guid: c958e328693dcdb4baa54baa04e5e8c3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8251648753005744477, guid: c958e328693dcdb4baa54baa04e5e8c3,
         type: 3}
@@ -4756,6 +4757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlackAgumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078335543751448028, guid: c59336b1fd1176542905cac0b0fb57f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59336b1fd1176542905cac0b0fb57f3, type: 3}

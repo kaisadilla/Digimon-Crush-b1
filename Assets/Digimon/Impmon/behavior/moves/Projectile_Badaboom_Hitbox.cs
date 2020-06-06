@@ -10,7 +10,7 @@ namespace Kaisa.DigimonCrush.Fighter {
                 DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
                 if (!f.IsImmune) {
                     f.StartHit(Move, owner.bounds.center);
-                    bool isHit = f.EndHit();
+                    bool isHit = f.EndHit(Move);
 
                     if (isHit) {
                         hits++;

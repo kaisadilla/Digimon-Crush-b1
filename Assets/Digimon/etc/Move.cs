@@ -44,6 +44,11 @@ namespace Kaisa.DigimonCrush.Fighter {
         /// An id used to identify this attack between all the attacks of the same digimon. Used to group cooldowns.
         /// </summary>
         public int InternalId { get; protected set; } = -1;
+        /// <summary>
+        /// The amount of time between the end of the hit and the moment the player regains control of their character,
+        /// used to prevent the player from escaping in the middle of a chained attack.
+        /// </summary>
+        public float BufferTime { get; protected set; } = 0f;
 
         public DigimonFighter user;
 

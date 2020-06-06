@@ -8,6 +8,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             Knockback = new Vector2(6, 3);
             KnockbackCount = 6;
             KnockbackMode = KnockbackMode.Last;
+            BufferTime = 0.5f;
         }
 
         public override void OnStart() {
