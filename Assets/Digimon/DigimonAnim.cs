@@ -7,17 +7,42 @@ namespace Kaisa.DigimonCrush.Fighter {
         [SerializeField] private DigimonFighter fighter;
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private Animator animator;
+        [Header("Particles")]
+        [SerializeField] public GameObject burn;
 
         private void Start() {
             StartCoroutine(FlashImmunity());
         }
 
         private void Update() {
-            if (fighter.Movement.FacingLeft) {
-                fighter.transform.localScale = new Vector3(-1, 1, 1);
+            if (fighter.Paralyzed) {
+                animator.speed = 0f;
+                return;
             }
             else {
-                fighter.transform.localScale = new Vector3(1, 1, 1);
+                animator.speed = 1f;
+            }
+
+            if (fighter.Burned) {
+                burn.SetActive(true);
+            }
+            else {
+                burn.SetActive(false);
+            }
+
+
+            //animator.speed = !fighter.Paralyzed ? 1f : 0f;
+
+            float scale = fighter.Scale;
+
+            float walkSpeed = fighter.Movement.ExtraSpeed;//fighter.Movement.IsRunning ? 1.5f : 1f;
+            animator.SetFloat("walk_speed", walkSpeed);
+
+            if (fighter.Movement.FacingLeft) {
+                fighter.transform.localScale = new Vector3(-scale, scale, scale);
+            }
+            else {
+                fighter.transform.localScale = new Vector3(scale, scale, scale);
             }
 
             float speed = fighter.Movement.CurrentSpeed;
@@ -78,7 +103,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         private IEnumerator FlashImmunity() {
             bool lastFrame = true;
             while (true) {
-                if (fighter.IsImmune && !(fighter.Movement.IsKnockedBack || fighter.Movement.IsAirborne)) {
+                if (fighter.IsImmune && !(fighter.Movement.IsKnockedBack || fighter.Movement.IsAirborne || fighter.Burned || fighter.Movement.CurrentMove != null)) {
                     lastFrame = !lastFrame;
                 }
                 else {

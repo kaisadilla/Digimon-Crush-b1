@@ -36,5 +36,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         protected abstract void ExitCollisionWithPlayer(Collider2D collision);
         protected abstract void EnterCollisionWithAttack(Collider2D collision);
 
+        protected virtual void ExtraEffects(DigimonFighter enemy) { }
+
     }
 }

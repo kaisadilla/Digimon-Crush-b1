@@ -10,6 +10,9 @@ public abstract class DigimonAudio : MonoBehaviour {
     [SerializeField] protected AudioClip dodge;
     [SerializeField] protected AudioClip gather;
 
+    public void Stop() {
+        source.Stop();
+    }
     public void PlayHit() {
         source.clip = hit;
         source.Play();

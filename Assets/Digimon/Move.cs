@@ -7,11 +7,13 @@ namespace Kaisa.DigimonCrush.Fighter {
         public string AnimName { get; protected set; } = "null";
         public float Damage { get; set; } = 1f;
 
+        public float Cooldown { get; protected set; } = 0f;
+
         /// <summary>
         /// The amount of times this attack has to hit its target to knock it back.
         /// </summary>
         public Vector2 Knockback { get; protected set; } = new Vector2(0, 0);
-        public int KnockbackCount { get; protected set; } = 0;
+        public int KnockbackCount { get; protected set; } = 1;
         public KnockbackMode KnockbackMode { get; protected set; } = KnockbackMode.Stack;
 
         /// <summary>
@@ -26,15 +28,27 @@ namespace Kaisa.DigimonCrush.Fighter {
         /// <summary>
         /// The distance projectiles launched by this move travel before dissappearing.
         /// </summary>
-        public float Distance { get; protected set; } = 0f;
+        //public float Distance { get; protected set; } = 0f;
+
+        public float Duration { get; protected set; } = 0f;
 
         public int HitCount { get; protected set; } = 0;
 
+        public bool EndOnEnter { get; protected set; } = false;
+
+        public float PointConversion { get; protected set; } = 0.5f;
+
+        public bool FriendlyFire { get; protected set; } = false;
+        public bool IgnoreGuard { get; protected set; } = false;
 
         public DigimonFighter user;
 
         public Move(DigimonFighter user) {
             this.user = user;
+        }
+
+        public virtual float GetDamage() {
+            return Damage * user.DamageMultiplier;
         }
 
         public virtual void OnStart() { }

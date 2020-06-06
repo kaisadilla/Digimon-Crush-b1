@@ -3,21 +3,31 @@
 namespace Kaisa.DigimonCrush.Fighter {
     public class MeleeHitbox : AttackHitbox {
         protected override void EnterCollisionWithPlayer(Collider2D collision) {
-            if (collision != owner) {
+            if (collision != owner || Move.FriendlyFire) {
                 DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
                 if (!f.IsImmune) {
-                    f.StartHit(Move.Damage, owner.bounds.center);
+                    f.StartHit(Move, owner.bounds.center, Move.PointConversion);
+                    if (Move.EndOnEnter) {
+                        EndHit(collision);
+                    }
                 }
             }
         }
 
         protected override void ExitCollisionWithPlayer(Collider2D collision) {
-            if (collision != owner) {
+            if (!Move.EndOnEnter) {
+                EndHit(collision);
+            }
+        }
+
+        protected void EndHit(Collider2D collision) {
+            if (collision != owner || Move.FriendlyFire) {
                 DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
                 bool isHit = f.EndHit();
 
                 if (isHit) {
                     hits++;
+                    Move.OnHit();
 
                     if (Move.KnockbackMode == KnockbackMode.Stack) {
                         if (isHit) {

@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public abstract class DigimonMovement : MonoBehaviour {
         [Header("Components")]
         [SerializeField] protected DigimonFighter fighter;
-        [SerializeField] protected Rigidbody2D body;
+        [SerializeField] public Rigidbody2D body;
         [SerializeField] protected MeleeHitbox meleeHitbox;
 
         [Header("Variables")]
@@ -19,6 +19,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         public bool FacingLeft { get; set; }
         public bool IsKnockedBack { get; protected set; }
         public bool IsAirborne { get; protected set; }
+        public bool AirJumpAllowed { get; protected set; } = true;
+
+        public float[] Cooldowns { get; protected set; } = new float[9];
 
         private Move _currentMove = null;
         public Move CurrentMove {
@@ -32,9 +35,24 @@ namespace Kaisa.DigimonCrush.Fighter {
             }
         }
 
-        public float MoveSpeed {
-            get => baseSpeed;
-            protected set => baseSpeed = value;
+        public bool IsRunning { get; set; }
+
+        public float MoveSpeed => baseSpeed * ExtraSpeed;
+
+        public float ExtraSpeed {
+            get {
+                if (IsGrounded) {
+                    if (!fighter.Enhanced) {
+                        return IsRunning ? 1.5f : 1f;
+                    }
+                    else {
+                        return IsRunning ? 2f : 1.5f;
+                    }
+                }
+                else {
+                    return 0.75f;
+                }
+            }
         }
         public float JumpSpeed {
             get => baseJumpSpeed;
@@ -68,6 +86,12 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         private void Update() {
             CurrentMove?.OnUpdate();
+            for (int i = 0; i < Cooldowns.Length; i++) {
+                if (Cooldowns[i] > 0f) {
+                    Cooldowns[i] -= Time.deltaTime;
+                    if (Cooldowns[i] < 0f) Cooldowns[i] = 0f;
+                }
+            }
         }
 
         private void OnCollisionStay2D(Collision2D collision) {
@@ -93,6 +117,32 @@ namespace Kaisa.DigimonCrush.Fighter {
             else if (CurrentSpeed < 0) FacingLeft = true;
         }
 
+        public void SetSpeed(Vector2 amount, bool directional = false) {
+            if (directional) amount = new Vector2(Directional(amount.x) * MoveSpeed, amount.y);
+
+            CurrentSpeed = amount.x;
+
+            body.velocity = amount;
+
+            if (CurrentSpeed > 0) FacingLeft = false;
+            else if (CurrentSpeed < 0) FacingLeft = true;
+        }
+
+        public void Walk(bool left) {
+            float amount = left ? -1 : 1;
+            CurrentSpeed = amount * MoveSpeed;
+
+            body.velocity = new Vector2(CurrentSpeed, body.velocity.y);
+
+            if (CurrentSpeed > 0) FacingLeft = false;
+            else if (CurrentSpeed < 0) FacingLeft = true;
+        }
+        
+        public void StopWalk() {
+            CurrentSpeed = 0;
+            body.velocity = new Vector2(CurrentSpeed, body.velocity.y);
+        }
+
         public void PushBack(float amount) {
             amount = Directional(amount) * 8f;
             body.velocity = new Vector2(amount, body.velocity.y);
@@ -107,6 +157,10 @@ namespace Kaisa.DigimonCrush.Fighter {
             body.velocity = new Vector2(body.velocity.x, JumpSpeed * amount);
         }
 
+        public void ResetAirJump() {
+            AirJumpAllowed = true;
+        }
+
         public void StopJump(float amount = 0.5f) {
             body.velocity = new Vector2(body.velocity.x, body.velocity.y * amount);
         }
@@ -119,6 +173,8 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public void ApplyKnockback(float force, float immunity = Constants.DEFAULT_IMMUNITY) {
+            if (fighter.Enhanced) force /= 2f;
+
             StopAirborne();
             IsKnockedBack = true;
             fighter.SetControllerEnabled(false);
@@ -138,13 +194,18 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public void ApplyAirborne(Vector2 force, float immunity = Constants.DEFAULT_IMMUNITY) {
-            StopKnockback();
-            IsAirborne = true;
-            fighter.SetControllerEnabled(false);
-            fighter.EnableImmunity(immunity);
-            body.velocity = new Vector2(-Directional(force.x) * 3, force.y * 3);
-            body.mass = 100;
-            CurrentSpeed = 0f;
+            if (!fighter.Enhanced) {
+                StopKnockback();
+                IsAirborne = true;
+                fighter.SetControllerEnabled(false);
+                fighter.EnableImmunity(immunity);
+                body.velocity = new Vector2(-Directional(force.x) * 3, force.y * 3);
+                body.mass = 100;
+                CurrentSpeed = 0f;
+            }
+            else {
+                ApplyKnockback(force.x / 2f);
+            }
         }
 
         public void StopAirborne() {
@@ -222,7 +283,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             GameObject prefab = Resources.Load<GameObject>($"moves/projectiles/{name}");
             offset = Directional(offset);
             GameObject p = Instantiate(prefab, transform.position - offset, Quaternion.Euler(0, 0, 0), null);
-            p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, FacingLeft);
+            p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, FacingLeft, fighter.Scale);
             return p;
         }
 
@@ -232,6 +293,21 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public void SetGuarded(bool guarded) {
             fighter.IsGuarded = guarded;
+        }
+
+        public void SetGhosted(bool ghosted) {
+            if (ghosted) {
+                fighter.gameObject.layer = Constants.layerGhostedPlayer;
+                foreach(Transform child in fighter.transform) {
+                    child.gameObject.layer = Constants.layerGhostedPlayer;
+                }
+            }
+            else {
+                fighter.gameObject.layer = Constants.layerPlayer;
+                foreach (Transform child in fighter.transform) {
+                    child.gameObject.layer = Constants.layerPlayer;
+                }
+            }
         }
     }
 }

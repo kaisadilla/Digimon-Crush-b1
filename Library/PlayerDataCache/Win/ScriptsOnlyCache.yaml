@@ -16,14 +16,13 @@ ScriptsOnlyBuild:
     - Kaisa.DigimonCrush.KnockbackEnd_Anim
     - Kaisa.DigimonCrush.Moves.Agumon.AttackAnim_claws
     - Kaisa.DigimonCrush.Moves.Agumon.Attack_FlyingKick_Anim
+    - Kaisa.DigimonCrush.PointBehavior
     - MoveAnimCaller
     - SoundtrackManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -116,15 +115,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13688}
     - Class: 114
-      Script: {instanceID: 14102}
+      Script: {instanceID: 13696}
     - Class: 114
-      Script: {instanceID: 14162}
+      Script: {instanceID: 14104}
     - Class: 114
-      Script: {instanceID: 14254}
+      Script: {instanceID: 14164}
     - Class: 114
-      Script: {instanceID: 14312}
+      Script: {instanceID: 14256}
     - Class: 114
-      Script: {instanceID: 14354}
+      Script: {instanceID: 14316}
+    - Class: 114
+      Script: {instanceID: 14358}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -614,7 +615,7 @@ ScriptsOnlyBuild:
     className: FighterAudio
   - hash:
       serializedVersion: 2
-      Hash: f3ec63205a89beed2255ffa0650fda0c
+      Hash: 7fa30a7f4c0d69a5169e86e55ddf9130
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush
     className: HealthBar
@@ -638,7 +639,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 1e509602f29bfe73a755e48d3d0ee84d
+      Hash: 362ad3986adc69b7b362ab4eb1b66461
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: DigimonFighter
@@ -650,10 +651,16 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: a3dd610f7a4c3c970be6a6e622bd69b5
+      Hash: 3bce6eb43ccb71b048930f3343a94b10
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AgumonAudio
+  - hash:
+      serializedVersion: 2
+      Hash: 8e15731d7a79a784b7e030cfec020b6a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush
+    className: PointBehavior
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -692,7 +699,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 1e509602f29bfe73a755e48d3d0ee84d
+      Hash: 362ad3986adc69b7b362ab4eb1b66461
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: AgumonFighter

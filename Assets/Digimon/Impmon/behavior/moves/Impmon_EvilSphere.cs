@@ -1,0 +1,40 @@
+﻿using UnityEngine;
+
+namespace Kaisa.DigimonCrush.Fighter {
+    public class Impmon_EvilSphere : Move {
+        private Projectile_EvilSphere proj;
+        private bool failed = false;
+
+        public Impmon_EvilSphere(DigimonFighter user) : base(user) {
+            AnimName = "attack_evilSphere";
+            Damage = 10f;
+            Knockback = new Vector2(6, 4);
+            Speed = 14f;
+            Duration = 4f;
+            IgnoreGuard = true;
+        }
+
+        public override void OnFire() {
+            if (user.CurrentPower >= 2) {
+                user.CurrentPower -= 2;
+                GameObject go = user.Movement.LaunchProjectile("impmon/evil_sphere", this, new Vector3(-1.9f, 0.75f, 0));
+                proj = go.GetComponent<Projectile_EvilSphere>();
+                proj.SetTarget(user.GetOppositePlayer());
+            }
+            else {
+                failed = true;
+            }
+
+        }
+
+        public override void CallEffect(string effect) {
+            if (effect == "Launch") Launch();
+        }
+
+        private void Launch() {
+            if (!failed) {
+                proj.Fire();
+            }
+        }
+    }
+}

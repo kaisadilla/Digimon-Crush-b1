@@ -1,0 +1,31 @@
+﻿using UnityEngine;
+
+namespace Kaisa.DigimonCrush.Fighter {
+    public class Impmon_ImpExplosion : Move {
+        public bool ExplosionHit { get; private set; } = false;
+        public Impmon_ImpExplosion(DigimonFighter user) : base(user) {
+            AnimName = "attack_impExplosion";
+            Damage = 12f;
+            Knockback = new Vector2(7, 7);
+            EndOnEnter = true;
+            PointConversion = 1f;
+        }
+
+        public override void OnHit() {
+            ExplosionHit = true;
+        }
+
+        public override void CallEffect(string effect) {
+            if (effect == "TriggerEnd") TriggerEnd();
+        }
+
+        public void TriggerEnd() {
+            if (ExplosionHit) {
+                user.Anim.TriggerAnim("attack_impExplosion_succeed");
+            }
+            else {
+                user.Anim.TriggerAnim("attack_impExplosion_failed");
+            }
+        }
+    }
+}

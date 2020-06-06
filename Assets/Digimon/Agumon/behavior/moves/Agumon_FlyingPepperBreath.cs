@@ -11,7 +11,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             Knockback = new Vector2(3, 2);
             KnockbackCount = 1;
             Speed = 12f;
-            Distance = 12f;
+            Duration = 1f;
         }
 
         public override void OnStart() {

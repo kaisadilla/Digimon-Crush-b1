@@ -6,11 +6,11 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Agumon_PepperBreath : Move {
         public Agumon_PepperBreath(DigimonFighter user) : base(user) {
             AnimName = "attack_pepperBreath";
-            Damage = 10f;
+            Damage = 9.2f;
             Knockback = new Vector2(3, 2);
             KnockbackCount = 1;
             Speed = 12f;
-            Distance = 12f;
+            Duration = 1f;
         }
 
         public override void OnFire() {

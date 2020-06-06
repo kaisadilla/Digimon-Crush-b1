@@ -11,11 +11,11 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public Agumon_BabyBurner(DigimonFighter user) : base(user) {
             AnimName = "attack_babyBurner_fill";
-            Damage = 15f;
+            Damage = 20f;
             Knockback = new Vector2(6, 4);
             KnockbackCount = 1;
             Speed = 16f;
-            Distance = 24f;
+            Duration = 1.5f;
         }
 
         public override void OnFire() {

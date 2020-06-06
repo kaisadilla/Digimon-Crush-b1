@@ -14,14 +14,24 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public bool ControlEnabled { get; set; } = true;
 
+        public bool CanAttack {
+            get {
+                if (fighter.Paralyzed) {
+                    return false;
+                }
+                else return ControlEnabled;
+            }
+        }
+
         protected Dictionary<string, string> keys = new Dictionary<string, string>();
         protected float jumpBufferTime = 0f;
         //protected float runBufferTime = 0f;
         //protected int runButtonCount = 0;
 
         protected float moveX;
+        protected bool isLeft;
 
-        protected virtual void Awake() {
+        protected virtual void Start() {
             keys["horizontal"] = $"p{fighter.Player}_horizontal";
             keys["vertical"] = $"p{fighter.Player}_vertical";
             keys["jump"] = $"p{fighter.Player}_jump";
@@ -40,7 +50,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
             //TODO: Player should be able to drop through platforms (currently blocked by SetGuarded() ), and not continue walking when using pepper breath.
             //TODO: Maybe player changes physicsmaterial2d while knocked back so it doesn't stuck with the other player.
-            if (ControlEnabled) {
+            if (CanAttack) {
                 if (Input.GetAxisRaw(keys["vertical"]) < 0) {
                     if (fighter.CurrentEnergy > 0.2f) {
                         Movement.SetGuarded(true);
@@ -49,6 +59,13 @@ namespace Kaisa.DigimonCrush.Fighter {
                 }
                 else {
                     Movement.SetGuarded(false);
+                }
+
+                if (Input.GetButtonDown(keys["run"])) {
+                    Movement.IsRunning = true;
+                }
+                else if (Input.GetButtonUp(keys["run"])) {
+                    Movement.IsRunning = false;
                 }
 
                 if (Input.GetButtonDown(keys["attack"])) {
@@ -62,7 +79,10 @@ namespace Kaisa.DigimonCrush.Fighter {
                         Movement.DropThroughPlatform();
                     }
                     else {
-                        if (!fighter.IsGuarded) Movement.Jump();
+                        if (!fighter.IsGuarded) {
+                            Movement.ResetAirJump();
+                            Movement.Jump();
+                        }
                     }
                 }
                 else if (!fighter.IsGuarded) {
@@ -70,17 +90,11 @@ namespace Kaisa.DigimonCrush.Fighter {
                         Movement.StopJump();
                     }
                     else if (Input.GetButton(keys["horizontal"])) {
-                        moveX = Input.GetAxisRaw(keys["horizontal"]);
-                        if (Movement.IsGrounded) {
-                            if (Input.GetButton(keys["run"])) moveX *= 1.5f;
-                        }
-                        else {
-                            moveX *= 0.75f;
-                        }
-                        Movement.SetSpeed(moveX);
+                        isLeft = Input.GetAxisRaw(keys["horizontal"]) < 0;
+                        Movement.Walk(isLeft);
                     }
                     else if (Input.GetButtonUp(keys["horizontal"])) {
-                        Movement.SetSpeed(0);
+                        Movement.StopWalk();
                     }
                 }
             }
@@ -121,7 +135,7 @@ namespace Kaisa.DigimonCrush.Fighter {
                     Movement.UseAttack5();
                 }
                 else if (Input.GetButton(keys["vertical"])) {
-                    if (Input.GetAxis(keys["vertical"]) > 0) {
+                    if (Input.GetAxis(keys["vertical"]) > 0 && Movement.AirJumpAllowed) {
                         Movement.UseAttack6();
                     }
                     else if (Input.GetAxis(keys["vertical"]) < 0) {

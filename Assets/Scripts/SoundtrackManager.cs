@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundtrackManager : MonoBehaviour {
 
@@ -14,9 +15,12 @@ public class SoundtrackManager : MonoBehaviour {
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.F5)) {
+        if (Input.GetKeyDown(KeyCode.F5)) {
             StopAllCoroutines();
             StartCoroutine(PlayRandomSoundtrack());
+        }
+        else if(Input.GetKeyDown(KeyCode.F2)) {
+            SceneManager.LoadScene("SampleScene");
         }
     }
 
