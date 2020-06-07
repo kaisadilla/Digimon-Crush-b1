@@ -16,9 +16,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public override void OnFire() {
-            float x = 2.7f;
+            float x = 3.2f;
             float y = -0.9f;
-            user.Movement.LaunchProjectile("gabumon/blue_blaster", this, x, y);
+            user.Movement.AttachProjectile("gabumon/blue_blaster", this, x, y);
         }
 
         public override void OnHit(DigimonFighter target) {

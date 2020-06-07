@@ -287,6 +287,14 @@ namespace Kaisa.DigimonCrush.Fighter {
             return p;
         }
 
+        public GameObject AttachProjectile(string name, Move move, float offsetX, float offsetY) {
+            GameObject prefab = Resources.Load<GameObject>($"moves/projectiles/{name}");
+            Vector3 offset = new Vector3(Directional(-offsetX), -offsetY, 0);
+            GameObject p = Instantiate(prefab, transform.position - offset, Quaternion.Euler(0, 0, 0), fighter.transform);
+            p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, false, fighter.Scale);
+            return p;
+        }
+
         public GameObject LaunchProjectile(string name, Move move) {
             return LaunchProjectile(name, move, 0, 0);
         }

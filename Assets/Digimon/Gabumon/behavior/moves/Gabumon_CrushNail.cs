@@ -7,8 +7,12 @@ namespace Kaisa.DigimonCrush.Fighter {
             BaseDamage = 0.75f;
             Knockback = new Vector2(2, 4);
             KnockbackCount = 4;
+            BufferTime = 0.25f;
         }
 
+        public override void OnStart() {
+            user.Movement.MoveX(1, true);
+        }
         public override void OnHit(DigimonFighter target) {
             BaseDamage *= 2f;
         }

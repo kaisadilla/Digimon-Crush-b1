@@ -18,7 +18,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public override void OnHit(DigimonFighter target) {
-            target.ApplySlow(0.35f, 4f);
+            target.ApplySlow(0.5f, 4f);
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Kaisa.DigimonCrush.Fighter {
     public class ProjectileHitbox : AttackHitbox {
         protected float timeToFriendlyFire = 0.5f;
+        protected int absoluteHits = 0; // counts every hit, even if the target was not affected.
         public void SetOwner(Collider2D owner) {
             this.owner = owner;
         }
@@ -21,6 +22,11 @@ namespace Kaisa.DigimonCrush.Fighter {
                     if (Move.EndOnEnter) {
                         EndHit(f);
                     }
+                }
+                absoluteHits++;
+
+                if (Move.MaxHits > 0 && absoluteHits >= Move.MaxHits) {
+                    Destroy(gameObject);
                 }
             }
         }
@@ -46,10 +52,6 @@ namespace Kaisa.DigimonCrush.Fighter {
                         f.Movement.ApplyAirborne(Move.Knockback, Move.Immunity);
                     }
                 }
-            }
-
-            if (Move.MaxHits > 0 && hits >= Move.MaxHits) {
-                Destroy(gameObject);
             }
         }
 

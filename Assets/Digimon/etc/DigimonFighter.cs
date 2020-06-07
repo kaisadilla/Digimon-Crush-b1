@@ -57,8 +57,10 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public float DamageMultiplier {
             get {
-                if (Enhanced) return 1.5f;
-                else return 1f;
+                float m = 1f;
+                if (Enhanced) m *= 1.5f;
+                if (IsSmashed) m *= Smash;
+                return m;
             }
         }
 

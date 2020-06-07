@@ -61,7 +61,7 @@ namespace Kaisa.DigimonCrush.Fighter {
                     Movement.SetGuarded(false);
                 }
 
-                if (Input.GetButtonDown(keys["run"])) {
+                if (Input.GetButton(keys["run"])) {
                     Movement.IsRunning = true;
                 }
                 else if (Input.GetButtonUp(keys["run"])) {

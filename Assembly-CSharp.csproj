@@ -84,9 +84,9 @@
     <Compile Include="Assets\Digimon\BlackAgumon\behavior\moves\BlackAgumon_PepperBreath_Flying.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\GabumonAudio.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\GabumonMovement.cs" />
+    <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_BassSmash.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_BlueBlaster.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_CrushNail.cs" />
-    <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_GuitarSmash.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_HornAttack.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_HornAttack_Flying.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_PetitFire.cs" />

@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class ImpmonFighter : DigimonFighter {
         private bool generatePoint;
         public override void OnDodgeHit(Move move, Vector3 hitPos, float pointConversion) {
-            if (generatePoint && move.IgnoreGuard) {
+            if (generatePoint && !move.IgnoreGuard) {
                 CurrentEnergy -= move.GetDamage() / 5f;
                 if (CurrentEnergy > 0) {
                     Audio.PlayGather();

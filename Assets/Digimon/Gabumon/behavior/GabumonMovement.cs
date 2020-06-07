@@ -19,7 +19,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         // jump + up
         public override Move OnAttack6() => new Gabumon_UpperClaw(fighter);
         // jump + down
-        public override Move OnAttack7() => new Gabumon_GuitarSmash(fighter);
+        public override Move OnAttack7() => new Gabumon_BassSmash(fighter);
         // running + horizontal
         public override Move OnAttack8() => new Gabumon_HornAttack(fighter);
         public override void UseAttack5() {
