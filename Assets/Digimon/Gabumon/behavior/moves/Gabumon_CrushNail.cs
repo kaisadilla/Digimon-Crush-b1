@@ -16,5 +16,8 @@ namespace Kaisa.DigimonCrush.Fighter {
         public override void OnHit(DigimonFighter target) {
             BaseDamage *= 2f;
         }
+        public override void OnUpdate() {
+            user.Movement.SetSpeed(0.5f, true);
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public override void OnStart() {
-            user.Movement.Jump(0.5f);
+            user.Movement.Jump(0.75f);
         }
     }
 }

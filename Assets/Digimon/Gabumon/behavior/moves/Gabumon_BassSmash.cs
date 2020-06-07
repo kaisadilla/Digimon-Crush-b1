@@ -7,11 +7,14 @@ namespace Kaisa.DigimonCrush.Fighter {
             BaseDamage = 8f;
             KnockbackCount = -1;
             EndOnEnter = true;
-            IgnoreGuard = true;
         }
 
         public override void OnHit(DigimonFighter target) {
             target.ApplySmash(0.35f, 5f);
+        }
+
+        public override void OnFire() {
+            user.Movement.SetSpeed(new Vector2(0, -35f), true);
         }
     }
 }

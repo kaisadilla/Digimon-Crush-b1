@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +21,9 @@ public class SoundtrackManager : MonoBehaviour {
             StartCoroutine(PlayRandomSoundtrack());
         }
         else if(Input.GetKeyDown(KeyCode.F2)) {
-            SceneManager.LoadScene("SampleScene");
+            Kaisa.DigimonCrush.Misc.Selection.SetPlayer0(-1);
+            Kaisa.DigimonCrush.Misc.Selection.SetPlayer1(-1);
+            SceneManager.LoadScene("SelectionScreen");
         }
     }
 

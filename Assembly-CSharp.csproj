@@ -145,9 +145,11 @@
     <Compile Include="Assets\Digimon\etc\SM_EndMove.cs" />
     <Compile Include="Assets\Digimon\etc\SM_InterruptMove.cs" />
     <Compile Include="Assets\Digimon\etc\SM_airborneGrounded.cs" />
-    <Compile Include="Assets\Digimon\oldAgumon\Moves\AttackAnim_claws.cs" />
-    <Compile Include="Assets\Digimon\oldAgumon\Moves\Attack_FlyingKick_Anim.cs" />
     <Compile Include="Assets\Elements\Scripts\PointBehavior.cs" />
+    <Compile Include="Assets\Elements\SelectScreen\GridChar.cs" />
+    <Compile Include="Assets\Elements\SelectScreen\SelectManager.cs" />
+    <Compile Include="Assets\Elements\SelectScreen\Selection.cs" />
+    <Compile Include="Assets\Elements\SelectScreen\SelectionCharacter.cs" />
     <Compile Include="Assets\Scripts\AnimState.cs" />
     <Compile Include="Assets\Scripts\AudioDatabase.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />

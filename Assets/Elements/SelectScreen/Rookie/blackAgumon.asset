@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18cb68df5bce98f4abf03dcb8458e9b1, type: 3}
+  m_Name: blackAgumon
+  m_EditorClassIdentifier: 
+  id: 4
+  charName: BlackAgumon
+  charDisplay: {fileID: 5895618777589651180, guid: b7b61fdb6288998479b73894ed55fdac,
+    type: 3}
+  selectionSprite: {fileID: 21300000, guid: 0e6a0768b8537084fa89c865b6d610da, type: 3}

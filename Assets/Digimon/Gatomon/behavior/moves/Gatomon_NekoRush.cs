@@ -7,13 +7,13 @@ namespace Kaisa.DigimonCrush.Fighter {
         public Gatomon_NekoRush(DigimonFighter user) : base(user) {
             AnimName = "attack_nekoRush";
             BaseDamage = 4f;
-            Knockback = new Vector2(6, 2);
+            Knockback = new Vector2(2, 1);
             //InternalId = 0;
             //Cooldown = 2f;
         }
 
         public override void OnUpdate() {
-            user.Movement.SetSpeed(new Vector2(3f, 0f), true);
+            user.Movement.SetSpeed(new Vector2(2.5f, 0f), true);
         }
     }
 }

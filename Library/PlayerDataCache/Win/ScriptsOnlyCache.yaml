@@ -2,27 +2,55 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AgumonAudio
+    - BlackAgumonAudio
+    - GabumonAudio
+    - GatomonAudio
+    - GreymonAudio
+    - GridChar
+    - ImpmonAudio
     - Kaisa.DigimonCrush.Fighter.AgumonAnim
     - Kaisa.DigimonCrush.Fighter.AgumonController
     - Kaisa.DigimonCrush.Fighter.AgumonFighter
     - Kaisa.DigimonCrush.Fighter.AgumonMovement
+    - Kaisa.DigimonCrush.Fighter.BlackAgumonMovement
+    - Kaisa.DigimonCrush.Fighter.DigimonAnim
+    - Kaisa.DigimonCrush.Fighter.DigimonController
+    - Kaisa.DigimonCrush.Fighter.DigimonFighter
+    - Kaisa.DigimonCrush.Fighter.GabumonMovement
+    - Kaisa.DigimonCrush.Fighter.GatomonMovement
+    - Kaisa.DigimonCrush.Fighter.GreymonController
+    - Kaisa.DigimonCrush.Fighter.GreymonFighter
+    - Kaisa.DigimonCrush.Fighter.GreymonMovement
+    - Kaisa.DigimonCrush.Fighter.ImpmonFighter
+    - Kaisa.DigimonCrush.Fighter.ImpmonMovement
     - Kaisa.DigimonCrush.Fighter.MeleeHitbox
+    - Kaisa.DigimonCrush.Fighter.Projectile
     - Kaisa.DigimonCrush.Fighter.ProjectileHitbox
     - Kaisa.DigimonCrush.Fighter.Projectile_BabyBurner
+    - Kaisa.DigimonCrush.Fighter.Projectile_Badaboom
+    - Kaisa.DigimonCrush.Fighter.Projectile_Badaboom_Hitbox
+    - Kaisa.DigimonCrush.Fighter.Projectile_CatsEye
+    - Kaisa.DigimonCrush.Fighter.Projectile_DiamondStorm
+    - Kaisa.DigimonCrush.Fighter.Projectile_EvilSphere
     - Kaisa.DigimonCrush.Fighter.Projectile_PepperBreath
+    - Kaisa.DigimonCrush.Fighter.RenamonMovement
     - Kaisa.DigimonCrush.Fighter.SM_EndMove
     - Kaisa.DigimonCrush.Fighter.SM_airborneGrounded
+    - Kaisa.DigimonCrush.GameManager
     - Kaisa.DigimonCrush.HealthBar
-    - Kaisa.DigimonCrush.KnockbackEnd_Anim
-    - Kaisa.DigimonCrush.Moves.Agumon.AttackAnim_claws
-    - Kaisa.DigimonCrush.Moves.Agumon.Attack_FlyingKick_Anim
+    - Kaisa.DigimonCrush.Misc.SelectManager
+    - Kaisa.DigimonCrush.Misc.SelectionCharacter
     - Kaisa.DigimonCrush.PointBehavior
     - MoveAnimCaller
+    - RandomChooser
+    - RenamonAudio
     - SoundtrackManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -30,8 +58,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -42,7 +72,9 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.Slider
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -89,43 +121,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11518}
+      Script: {instanceID: 11218}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11234}
     - Class: 114
-      Script: {instanceID: 11620}
+      Script: {instanceID: 11532}
     - Class: 114
-      Script: {instanceID: 11974}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 12190}
+      Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 12256}
+      Script: {instanceID: 11944}
     - Class: 114
-      Script: {instanceID: 12668}
+      Script: {instanceID: 12000}
     - Class: 114
-      Script: {instanceID: 13088}
+      Script: {instanceID: 12120}
     - Class: 114
-      Script: {instanceID: 13218}
+      Script: {instanceID: 12222}
     - Class: 114
-      Script: {instanceID: 13462}
+      Script: {instanceID: 12332}
     - Class: 114
-      Script: {instanceID: 13610}
+      Script: {instanceID: 12422}
     - Class: 114
-      Script: {instanceID: 13686}
+      Script: {instanceID: 12484}
     - Class: 114
-      Script: {instanceID: 13688}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 13696}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 14104}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 14164}
+      Script: {instanceID: 12724}
     - Class: 114
-      Script: {instanceID: 14256}
+      Script: {instanceID: 12872}
     - Class: 114
-      Script: {instanceID: 14316}
+      Script: {instanceID: 13010}
     - Class: 114
-      Script: {instanceID: 14358}
+      Script: {instanceID: 13150}
+    - Class: 114
+      Script: {instanceID: 13284}
+    - Class: 114
+      Script: {instanceID: 13344}
+    - Class: 114
+      Script: {instanceID: 13486}
+    - Class: 114
+      Script: {instanceID: 13538}
+    - Class: 114
+      Script: {instanceID: 13630}
+    - Class: 114
+      Script: {instanceID: 13692}
+    - Class: 114
+      Script: {instanceID: 13758}
+    - Class: 114
+      Script: {instanceID: 13772}
+    - Class: 114
+      Script: {instanceID: 13774}
+    - Class: 114
+      Script: {instanceID: 13782}
+    - Class: 114
+      Script: {instanceID: 13948}
+    - Class: 114
+      Script: {instanceID: 14268}
+    - Class: 114
+      Script: {instanceID: 14306}
+    - Class: 114
+      Script: {instanceID: 14312}
+    - Class: 114
+      Script: {instanceID: 14422}
+    - Class: 114
+      Script: {instanceID: 14442}
+    - Class: 114
+      Script: {instanceID: 14470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -143,6 +209,91 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 251
+      Script: {instanceID: 0}
+    Assets/Scenes/SelectionScreen.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 62
+      Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11172}
+    - Class: 114
+      Script: {instanceID: 11532}
+    - Class: 114
+      Script: {instanceID: 11638}
+    - Class: 114
+      Script: {instanceID: 11784}
+    - Class: 114
+      Script: {instanceID: 12042}
+    - Class: 114
+      Script: {instanceID: 12222}
+    - Class: 114
+      Script: {instanceID: 12288}
+    - Class: 114
+      Script: {instanceID: 12324}
+    - Class: 114
+      Script: {instanceID: 12976}
+    - Class: 114
+      Script: {instanceID: 13036}
+    - Class: 114
+      Script: {instanceID: 13048}
+    - Class: 114
+      Script: {instanceID: 13200}
+    - Class: 114
+      Script: {instanceID: 13620}
+    - Class: 114
+      Script: {instanceID: 13772}
+    - Class: 114
+      Script: {instanceID: 13950}
+    - Class: 114
+      Script: {instanceID: 14204}
+    - Class: 114
+      Script: {instanceID: 14362}
+    - Class: 114
+      Script: {instanceID: 14422}
+    - Class: 114
+      Script: {instanceID: 14510}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -165,10 +316,22 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
+      Hash: 4f4a18e9f414f35919bf5969a3845dc6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ImpmonAudio
+  - hash:
+      serializedVersion: 2
       Hash: 5ca1498ee103669a2f777b7e6a3f45ff
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush
     className: FighterMovement
+  - hash:
+      serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: BlackAgumonMovement
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -297,6 +460,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 44f818dc1f72565543ba2fabb2d8b93f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: Projectile_EvilSphere
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -339,6 +508,12 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: RenamonMovement
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -361,6 +536,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 362ad3986adc69b7b362ab4eb1b66461
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: ImpmonFighter
   - hash:
       serializedVersion: 2
       Hash: 53d66161241435c26f4a37eee594b520
@@ -423,16 +604,28 @@ ScriptsOnlyBuild:
     className: Projectile
   - hash:
       serializedVersion: 2
+      Hash: 8153182a9371d977ec86fd21718bf8ef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: 2a2904f00a6b6fa468bdd2686f968562
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioDatabase
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 4f4a18e9f414f35919bf5969a3845dc6
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Kaisa.DigimonCrush.Moves.Agumon
-    className: Attack_FlyingKick_Anim
+    namespaceName: 
+    className: GatomonAudio
+  - hash:
+      serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: GreymonMovement
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -453,6 +646,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: 16711d03a65c695ca583e84e56db3442
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GabumonAudio
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
@@ -471,10 +670,22 @@ ScriptsOnlyBuild:
     className: SM_InterruptMove
   - hash:
       serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: GatomonMovement
+  - hash:
+      serializedVersion: 2
       Hash: 0615e21cd420cd560ff737cd103cd9e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SoundtrackManager
+  - hash:
+      serializedVersion: 2
+      Hash: eeb5fccc052588a5f5ea1e5c649ffd43
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BlackAgumonAudio
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -495,6 +706,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: 05bd4dc5b2f4ca205f8cb9fb7f44dd1c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RandomChooser
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -505,6 +722,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: d9a2e01eec23bfc97f3ed8ac9b3da955
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: Projectile_DiamondStorm
   - hash:
       serializedVersion: 2
       Hash: feb9a5a121d15fa3654d4e50a5233045
@@ -519,10 +742,16 @@ ScriptsOnlyBuild:
     className: DigimonController
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 0950553c6c82cd05c378be0836007dbe
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Kaisa.DigimonCrush.Moves.Agumon
-    className: AttackAnim_claws
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: Projectile_Badaboom_Hitbox
+  - hash:
+      serializedVersion: 2
+      Hash: 0950553c6c82cd05c378be0836007dbe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: Projectile_CatsEye
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -531,7 +760,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: f6d7fd43c9890f241630472f61b2822e
+      Hash: 9af61349cb9d1cf49b714c0d2760e808
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: AgumonAnim
@@ -541,6 +770,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush
     className: HitboxMelee
+  - hash:
+      serializedVersion: 2
+      Hash: 9d0911cb5865a74dfd08530d02ca39d3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: Projectile_Badaboom
   - hash:
       serializedVersion: 2
       Hash: 71b711096c6c32621c1d4c02310898b7
@@ -585,6 +820,12 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: ImpmonMovement
+  - hash:
+      serializedVersion: 2
       Hash: e1300922cc039f41ab46a47f4cb05898
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -609,16 +850,34 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 4f4a18e9f414f35919bf5969a3845dc6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RenamonAudio
+  - hash:
+      serializedVersion: 2
       Hash: f777526ed04c1fa99b5e858623645a84
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FighterAudio
   - hash:
       serializedVersion: 2
-      Hash: 7fa30a7f4c0d69a5169e86e55ddf9130
+      Hash: f55933ce794a71501f30824b01f395d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush
     className: HealthBar
+  - hash:
+      serializedVersion: 2
+      Hash: c37262175e97fd94d6b0bee6a43785f5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Misc
+    className: SelectManager
+  - hash:
+      serializedVersion: 2
+      Hash: 362ad3986adc69b7b362ab4eb1b66461
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: GreymonFighter
   - hash:
       serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
@@ -669,6 +928,18 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 4f4a18e9f414f35919bf5969a3845dc6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GreymonAudio
+  - hash:
+      serializedVersion: 2
+      Hash: c3b61d908f3cd0011cf1dfb448b20362
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GridChar
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -717,10 +988,16 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: f6d7fd43c9890f241630472f61b2822e
+      Hash: 9af61349cb9d1cf49b714c0d2760e808
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: DigimonAnim
+  - hash:
+      serializedVersion: 2
+      Hash: 12323673019fff13e0a3857878fc0fc7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: GreymonController
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -771,6 +1048,12 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: GabumonMovement
+  - hash:
+      serializedVersion: 2
       Hash: aa88ae22474df55295327e4ee99e5a24
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -795,11 +1078,18 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: cc79750e0a615394358e56c0f25f4cf4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Misc
+    className: SelectionCharacter
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
   platform: 5
   scenePathNames:
+  - Assets/Scenes/SelectionScreen.unity
   - Assets/Scenes/SampleScene.unity
   playerPath: E:/Repos/Unity/comp/Digimon Crush b1.exe
