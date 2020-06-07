@@ -100,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.107064016, y: -0.04570498}
-  m_Size: {x: 1.8780327, y: 1.0930015}
+  m_Offset: {x: 0.14383796, y: 0.05358349}
+  m_Size: {x: 2.9831617, y: 1.9535155}
   m_Direction: 1
 --- !u!50 &3216138593439454526
 Rigidbody2D:
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 20561028501219944}
+  staticSprite: 0
   user: {fileID: 0}
 --- !u!114 &20561028501219944
 MonoBehaviour:

@@ -10,7 +10,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             BaseDamage = 10f;
             Knockback = new Vector2(3, 2);
             KnockbackCount = 1;
-            Speed = 12f;
+            Speed = new Vector2(12f, 0f);
             Duration = 1f;
         }
 

@@ -221,14 +221,24 @@ namespace Kaisa.DigimonCrush.Fighter {
             Controller.ControlEnabled = enabled;
         }
 
-        public void StartHit(Move move, Vector3 hitPos, float pointConversion = 0.5f) {
+        /// <summary>
+        /// Outputs whether the player was guarded.
+        /// </summary>
+        public void StartHit(Move move, Vector3 hitPos, out bool guarded, float pointConversion = 0.5f) {
+            guarded = false;
             if (IsImmune) return;
 
-            if (IsGuarded && !move.IgnoreGuard) {
-                OnDodgeHit(move, hitPos, pointConversion);
+            if (IsGuarded) {
+                guarded = true;
+                if (move.IgnoreGuard) {
+                    if (IsGuarded) IsGuarded = false;
+                    OnApplyHit(move, hitPos, pointConversion);
+                }
+                else {
+                    OnDodgeHit(move, hitPos, pointConversion);
+                }
             }
             else {
-                if (IsGuarded) IsGuarded = false;
                 OnApplyHit(move, hitPos, pointConversion);
             }
         }
@@ -322,6 +332,20 @@ namespace Kaisa.DigimonCrush.Fighter {
         public int GetOppositePlayerIndex() {
             if (Player == 0) return 1;
             else return 0;
+        }
+
+        public float AddEnergy(float amount) {
+            CurrentEnergy += amount;
+            return CurrentEnergy;
+        }
+
+        public float AddHP(float amount) {
+            CurrentHP += amount;
+            return CurrentHP;
+        }
+        public float AddPower(int amount) {
+            CurrentPower += amount;
+            return CurrentPower;
         }
     }
 }

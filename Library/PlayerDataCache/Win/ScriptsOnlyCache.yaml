@@ -5,8 +5,8 @@ ScriptsOnlyBuild:
     - BlackAgumonAudio
     - GabumonAudio
     - GatomonAudio
-    - GreymonAudio
     - GridChar
+    - GuilmonAudio
     - ImpmonAudio
     - Kaisa.DigimonCrush.Fighter.AgumonAnim
     - Kaisa.DigimonCrush.Fighter.AgumonController
@@ -18,9 +18,7 @@ ScriptsOnlyBuild:
     - Kaisa.DigimonCrush.Fighter.DigimonFighter
     - Kaisa.DigimonCrush.Fighter.GabumonMovement
     - Kaisa.DigimonCrush.Fighter.GatomonMovement
-    - Kaisa.DigimonCrush.Fighter.GreymonController
-    - Kaisa.DigimonCrush.Fighter.GreymonFighter
-    - Kaisa.DigimonCrush.Fighter.GreymonMovement
+    - Kaisa.DigimonCrush.Fighter.GuilmonMovement
     - Kaisa.DigimonCrush.Fighter.ImpmonFighter
     - Kaisa.DigimonCrush.Fighter.ImpmonMovement
     - Kaisa.DigimonCrush.Fighter.MeleeHitbox
@@ -58,6 +56,7 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnimatorStateTransitionInspector
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
@@ -125,73 +124,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11234}
     - Class: 114
-      Script: {instanceID: 11532}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11636}
     - Class: 114
-      Script: {instanceID: 11944}
+      Script: {instanceID: 11948}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 12006}
     - Class: 114
-      Script: {instanceID: 12120}
+      Script: {instanceID: 12126}
     - Class: 114
-      Script: {instanceID: 12222}
+      Script: {instanceID: 12230}
     - Class: 114
-      Script: {instanceID: 12332}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12422}
+      Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 12484}
+      Script: {instanceID: 12430}
     - Class: 114
-      Script: {instanceID: 12676}
+      Script: {instanceID: 12684}
     - Class: 114
-      Script: {instanceID: 12712}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 12718}
+      Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 12724}
+      Script: {instanceID: 12732}
     - Class: 114
-      Script: {instanceID: 12872}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 13010}
+      Script: {instanceID: 13018}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13160}
     - Class: 114
-      Script: {instanceID: 13284}
+      Script: {instanceID: 13294}
     - Class: 114
-      Script: {instanceID: 13344}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13486}
+      Script: {instanceID: 13498}
     - Class: 114
-      Script: {instanceID: 13538}
+      Script: {instanceID: 13550}
     - Class: 114
-      Script: {instanceID: 13630}
+      Script: {instanceID: 13704}
     - Class: 114
-      Script: {instanceID: 13692}
+      Script: {instanceID: 13770}
     - Class: 114
-      Script: {instanceID: 13758}
+      Script: {instanceID: 13784}
     - Class: 114
-      Script: {instanceID: 13772}
+      Script: {instanceID: 13786}
     - Class: 114
-      Script: {instanceID: 13774}
+      Script: {instanceID: 13794}
     - Class: 114
-      Script: {instanceID: 13782}
+      Script: {instanceID: 13994}
     - Class: 114
-      Script: {instanceID: 13948}
+      Script: {instanceID: 14222}
     - Class: 114
-      Script: {instanceID: 14268}
+      Script: {instanceID: 14286}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 14324}
     - Class: 114
-      Script: {instanceID: 14312}
-    - Class: 114
-      Script: {instanceID: 14422}
+      Script: {instanceID: 14368}
     - Class: 114
       Script: {instanceID: 14442}
     - Class: 114
-      Script: {instanceID: 14470}
+      Script: {instanceID: 14462}
+    - Class: 114
+      Script: {instanceID: 14490}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -244,41 +243,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11532}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11638}
+      Script: {instanceID: 11640}
     - Class: 114
-      Script: {instanceID: 11784}
+      Script: {instanceID: 11788}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12222}
+      Script: {instanceID: 12230}
     - Class: 114
-      Script: {instanceID: 12288}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12324}
+      Script: {instanceID: 12332}
     - Class: 114
-      Script: {instanceID: 12976}
+      Script: {instanceID: 12984}
     - Class: 114
-      Script: {instanceID: 13036}
+      Script: {instanceID: 13044}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 13200}
+      Script: {instanceID: 13210}
     - Class: 114
-      Script: {instanceID: 13620}
+      Script: {instanceID: 13632}
     - Class: 114
-      Script: {instanceID: 13772}
+      Script: {instanceID: 13784}
     - Class: 114
-      Script: {instanceID: 13950}
+      Script: {instanceID: 13966}
     - Class: 114
-      Script: {instanceID: 14204}
+      Script: {instanceID: 14222}
     - Class: 114
-      Script: {instanceID: 14362}
+      Script: {instanceID: 14382}
     - Class: 114
-      Script: {instanceID: 14422}
+      Script: {instanceID: 14442}
     - Class: 114
-      Script: {instanceID: 14510}
+      Script: {instanceID: 14530}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -460,7 +459,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 44f818dc1f72565543ba2fabb2d8b93f
+      Hash: f762ea9357d6f244fc004c9c2957d33c
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: Projectile_EvilSphere
@@ -580,7 +579,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 44f818dc1f72565543ba2fabb2d8b93f
+      Hash: f762ea9357d6f244fc004c9c2957d33c
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: Projectile_PepperBreath
@@ -598,7 +597,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 44f818dc1f72565543ba2fabb2d8b93f
+      Hash: f762ea9357d6f244fc004c9c2957d33c
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: Projectile
@@ -724,7 +723,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: d9a2e01eec23bfc97f3ed8ac9b3da955
+      Hash: 5d447be967a47db448d38fad0f5d756d
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: Projectile_DiamondStorm
@@ -760,7 +759,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 9af61349cb9d1cf49b714c0d2760e808
+      Hash: 45a7881213095f931834e9af0e86e593
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: AgumonAnim
@@ -772,7 +771,7 @@ ScriptsOnlyBuild:
     className: HitboxMelee
   - hash:
       serializedVersion: 2
-      Hash: 9d0911cb5865a74dfd08530d02ca39d3
+      Hash: d655eae83e72146355da3fe5b8bcbc75
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: Projectile_Badaboom
@@ -940,6 +939,12 @@ ScriptsOnlyBuild:
     className: GridChar
   - hash:
       serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: GuilmonMovement
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -988,7 +993,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 9af61349cb9d1cf49b714c0d2760e808
+      Hash: 45a7881213095f931834e9af0e86e593
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: DigimonAnim
@@ -1006,6 +1011,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 4f4a18e9f414f35919bf5969a3845dc6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GuilmonAudio
+  - hash:
+      serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1018,7 +1029,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: 44f818dc1f72565543ba2fabb2d8b93f
+      Hash: f762ea9357d6f244fc004c9c2957d33c
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kaisa.DigimonCrush.Fighter
     className: Projectile_BabyBurner

@@ -11,6 +11,10 @@ public class RandomChooser : MonoBehaviour {
     public HealthBar healthBar0, healthBar1;
 
     void Awake() {
+        if (Selection.GetPlayer0() == -1 || Selection.GetPlayer1() == -1) {
+            return;
+        }
+
         //var digimon0 = digimon[Random.Range(0, digimon.Length)];
         var digimon0 = digimon[Selection.GetPlayer0()];
         var player0 = Instantiate(digimon0, position0.position, Quaternion.Euler(0, 0, 0));

@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             AnimName = "attack_badaboom_flying";
             BaseDamage = 5f;
             KnockbackCount = -1;
-            Speed = 14f;
+            Speed = new Vector2(14f, -4f);
             Duration = 3f;
             EndOnEnter = true;
         }

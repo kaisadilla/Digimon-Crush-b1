@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             AnimName = "attack_diamondStorm";
             BaseDamage = 10f;
             Knockback = new Vector2(4, 2);
-            Speed = 14f;
+            Speed = new Vector2(14f, 0f);
             Duration = 1f;
             EndOnEnter = true;
         }

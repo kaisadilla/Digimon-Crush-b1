@@ -8,7 +8,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             AnimName = "attack_megaFlame";
             BaseDamage = 12f;
             Knockback = new Vector2(4, 2);
-            Speed = 12f;
+            Speed = new Vector2(12f, 0f);
             Duration = 1.35f;
             EndOnEnter = true;
         }

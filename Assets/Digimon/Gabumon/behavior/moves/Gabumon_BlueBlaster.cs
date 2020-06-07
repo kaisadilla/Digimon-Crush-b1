@@ -7,7 +7,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             AnimName = "attack_blueBlaster";
             BaseDamage = 3f;
             KnockbackCount = -1;
-            Speed = 0f;
+            Speed = new Vector2(0f, 0f);
             Duration = 1.6f;
             BufferTime = 0.35f;
             MaxHits = -1;

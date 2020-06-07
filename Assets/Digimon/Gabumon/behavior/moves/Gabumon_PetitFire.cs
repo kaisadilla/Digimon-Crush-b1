@@ -6,7 +6,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             AnimName = "attack_petitFire";
             BaseDamage = 4f;
             Knockback = new Vector2(3f, 0f);
-            Speed = 10f;
+            Speed = new Vector2(10f, 0f);
             Duration = 0.5f;
         }
 

@@ -85,6 +85,15 @@ namespace Kaisa.DigimonCrush.Fighter {
             }
         }
 
+        /// <summary>
+        /// Returns half the current height of the hitbox.
+        /// </summary>
+        public float CurrentHeight => fighter.Hitbox.bounds.extents.y;
+        /// <summary>
+        /// Returns true if the fighter is in a platform.
+        /// </summary>
+        public bool IsInPlatform => GroundTag == "Platform";
+
         private void Update() {
             CurrentMove?.OnUpdate();
             for (int i = 0; i < Cooldowns.Length; i++) {
@@ -158,6 +167,9 @@ namespace Kaisa.DigimonCrush.Fighter {
             if (directional) amount = Directional(amount);
             body.transform.position += new Vector3(amount, 0, 0);
         }
+        public void MoveY(float amount) {
+            body.transform.position += new Vector3(0, amount, 0);
+        }
 
         public void Jump(float amount = 1f) {
             body.velocity = new Vector2(body.velocity.x, JumpSpeed * amount);
@@ -184,6 +196,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
             StopAirborne();
             IsKnockedBack = true;
+            fighter.Anim.hitPending = true;
             fighter.SetControllerEnabled(false);
             fighter.EnableImmunity(immunity);
             body.velocity = new Vector2(-Directional(3 * force), body.velocity.y);
@@ -282,7 +295,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public GameObject LaunchProjectile(string name, Move move, float offsetX, float offsetY, bool oppositeSide = false) {
             GameObject prefab = Resources.Load<GameObject>($"moves/projectiles/{name}");
             Vector3 offset = new Vector3(Directional(-offsetX), -offsetY, 0);
-            GameObject p = Instantiate(prefab, transform.position - offset, Quaternion.Euler(0, 0, 0), null);
+            GameObject p = Instantiate(prefab, transform.position - offset, prefab.transform.rotation, null);
             p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, FacingLeft ^ oppositeSide, fighter.Scale); //xor: ^
             return p;
         }
@@ -372,6 +385,10 @@ namespace Kaisa.DigimonCrush.Fighter {
                 CurrentMove = m;
                 StartCurrentMove();
             }
+        }
+
+        public void SetCooldown(int id, float cd) {
+            Cooldowns[id] = cd;
         }
 
         public abstract Move OnAttack0(); // regular

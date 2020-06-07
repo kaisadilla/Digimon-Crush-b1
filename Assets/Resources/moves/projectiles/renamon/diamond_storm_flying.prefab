@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4014582778291383492}
   - component: {fileID: 3216138593439454526}
   - component: {fileID: 1905250106211084592}
-  - component: {fileID: 5464990294754413784}
+  - component: {fileID: 7116011321947016213}
   - component: {fileID: 2810450632428472009}
   m_Layer: 11
   m_Name: diamond_storm_flying
@@ -143,7 +143,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5464990294754413784
+--- !u!114 &7116011321947016213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2810450632428472009}
   user: {fileID: 0}
-  diagonal: 1
+  diagonal: 0
 --- !u!114 &2810450632428472009
 MonoBehaviour:
   m_ObjectHideFlags: 0

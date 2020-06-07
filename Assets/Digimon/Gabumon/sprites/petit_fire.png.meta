@@ -8,6 +8,15 @@ TextureImporter:
   - first:
       213: -2013364270987768983
     second: petit_fire_1
+  - first:
+      213: -8395263461781959769
+    second: petit_fire_2
+  - first:
+      213: -8509580833781103475
+    second: petit_fire_3
+  - first:
+      213: 577725336449862111
+    second: petit_fire_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,10 +131,10 @@ TextureImporter:
         serializedVersion: 2
         x: 2
         y: 2
-        width: 21
-        height: 12
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +150,12 @@ TextureImporter:
       name: petit_fire_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 36
         y: 2
-        width: 21
-        height: 12
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,6 +163,69 @@ TextureImporter:
       bones: []
       spriteID: 96b8f40ecd71f04e0800000000000000
       internalID: -2013364270987768983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_fire_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab8bac8c580e7b80800000000000000
+      internalID: -8395263461781959769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_fire_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84410f3155e7e980800000000000000
+      internalID: -8509580833781103475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_fire_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd946d0f12e740800800000000000000
+      internalID: 577725336449862111
       vertices: []
       indices: 
       edges: []

@@ -8,8 +8,8 @@ namespace Kaisa.DigimonCrush.Fighter {
         [SerializeField] protected Rigidbody2D body;
         protected override void OnStart() {
             initialX = transform.position.x;
-            float speedX = goingLeft ? -move.Speed : move.Speed;
-            body.velocity = new Vector2(speedX, -4);
+            float speedX = goingLeft ? -move.Speed.x : move.Speed.x;
+            body.velocity = new Vector2(speedX, move.Speed.y);
         }
 
         protected override void Travel() { }

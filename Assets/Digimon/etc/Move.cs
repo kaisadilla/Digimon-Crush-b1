@@ -12,7 +12,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         /// <summary>
         /// The base damage of this attack. Use GetDamage() to get the actual damage of this attack at any given moment.
         /// </summary>
-        public float BaseDamage { get; set; } = 1f;
+        public float BaseDamage { get; set; } = 0f;
 
         /// <summary>
         /// The cooldown of the attack. Will only work if the InternalId of the attack is between 0 and 9 (inclusive).
@@ -39,7 +39,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         /// <summary>
         /// The speed at which projectiles launched by this move travel.
         /// </summary>
-        public float Speed { get; protected set; } = 0f;
+        public Vector2 Speed { get; protected set; } = Vector2.zero;
         /// <summary>
         /// The duration in seconds of projectiles launched by this move before dissappearing.
         /// </summary>
@@ -96,6 +96,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public virtual void OnEnd() { }
         public virtual void OnInterrupt() { }
         public virtual void OnHit(DigimonFighter target) { }
+        public virtual void OnDodge(DigimonFighter target) { }
         public virtual void OnFire() { }
         public virtual void OnAttackCollision(Collider2D collision) { }
         public virtual void CallEffect(string effect) { }

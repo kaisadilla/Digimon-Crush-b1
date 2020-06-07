@@ -18,7 +18,10 @@ namespace Kaisa.DigimonCrush.Fighter {
             if (collision != owner || (Move.FriendlyFire && timeToFriendlyFire <= 0f)) {
                 DigimonFighter f = collision.transform.parent.GetComponent<DigimonFighter>();
                 if (!f.IsImmune) {
-                    f.StartHit(Move, owner.bounds.center, Move.PointConversion);
+                    f.StartHit(Move, owner.bounds.center, out bool dodged, Move.PointConversion);
+                    if (dodged) {
+                        Move.OnDodge(f);
+                    }
                     if (Move.EndOnEnter) {
                         EndHit(f);
                     }

@@ -109,6 +109,15 @@
     <Compile Include="Assets\Digimon\Greymon\behavior\moves\Greymon_GreatAntler.cs" />
     <Compile Include="Assets\Digimon\Greymon\behavior\moves\Greymon_HornAttack.cs" />
     <Compile Include="Assets\Digimon\Greymon\behavior\moves\Greymon_MegaFlame.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\GuilmonAudio.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\GuilmonMovement.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\moves\Guilmon_FireMitt.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\moves\Guilmon_KurenaiMaru.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\moves\Guilmon_PetitDejeuner.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\moves\Guilmon_PyroSphere.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\moves\Guilmon_PyroSphere_Flying.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\moves\Guilmon_RockBreaker.cs" />
+    <Compile Include="Assets\Digimon\Guilmon\behavior\moves\Guilmon_SharpClaw.cs" />
     <Compile Include="Assets\Digimon\Impmon\behavior\ImpmonAudio.cs" />
     <Compile Include="Assets\Digimon\Impmon\behavior\ImpmonFighter.cs" />
     <Compile Include="Assets\Digimon\Impmon\behavior\ImpmonMovement.cs" />

@@ -16,7 +16,7 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public bool CanAttack {
             get {
-                if (fighter.Paralyzed) {
+                if (fighter.Paralyzed || fighter.Burned) {
                     return false;
                 }
                 else return ControlEnabled;
@@ -46,6 +46,9 @@ namespace Kaisa.DigimonCrush.Fighter {
             //Jumps can be 'submitted' even while the control is disabled, but will only work if the control is enabled.
             if (Input.GetButtonDown(keys["jump"])) {
                 jumpBufferTime = JUMP_BUFFER;
+            }
+            else if (Input.GetButtonUp(keys["jump"])) {
+                jumpBufferTime = 0f;
             }
 
             //TODO: Player should be able to drop through platforms (currently blocked by SetGuarded() ), and not continue walking when using pepper breath.

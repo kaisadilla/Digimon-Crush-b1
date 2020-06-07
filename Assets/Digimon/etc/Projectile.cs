@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Kaisa.DigimonCrush.Fighter {
     public class Projectile : MonoBehaviour {
         [SerializeField] protected ProjectileHitbox hitbox;
+        [SerializeField] protected bool staticSprite = false;
         public GameObject user;
         protected Move move;
 
@@ -43,17 +44,20 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         protected virtual void Travel() {
-            float moveX = (goingLeft ? -move.Speed : move.Speed ) * Time.deltaTime;
-            transform.position += new Vector3(moveX, 0, 0);
+            float moveX = (goingLeft ? -move.Speed.x : move.Speed.x ) * Time.deltaTime;
+            float moveY = move.Speed.y * Time.deltaTime;
+            transform.position += new Vector3(moveX, moveY, 0);
             AdjustScale();
         }
 
         protected virtual void AdjustScale() {
-            if (goingLeft) {
-                transform.localScale = new Vector3(-scale, scale, scale);
-            }
-            else {
-                transform.localScale = new Vector3(scale, scale, scale);
+            if (!staticSprite) {
+                if (goingLeft) {
+                    transform.localScale = new Vector3(-scale, scale, scale);
+                }
+                else {
+                    transform.localScale = new Vector3(scale, scale, scale);
+                }
             }
         }
     }

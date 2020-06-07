@@ -24,7 +24,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         protected override void Travel() {
-            float moveX = (goingLeft ? -move.Speed : move.Speed) * Time.deltaTime;
+            float moveX = (goingLeft ? -move.Speed.x : move.Speed.x) * Time.deltaTime;
             float moveY;
 
             moveY = (target?.transform.position.y > transform.position.y ? 4 : -4) * Time.deltaTime;

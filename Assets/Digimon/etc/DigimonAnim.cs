@@ -10,6 +10,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         [Header("Particles")]
         [SerializeField] public GameObject burn;
 
+        //Prevents the hit animation from being skipped on attacks that end the hit in the same frame that start it (EndOnEnter = true).
+        public bool hitPending = false;
+
         private void Start() {
             StartCoroutine(FlashImmunity());
         }
@@ -82,7 +85,8 @@ namespace Kaisa.DigimonCrush.Fighter {
                 }
             }
 
-            if(fighter.IsBeingHit) {
+            if(fighter.IsBeingHit || hitPending) {
+                hitPending = false;
                 SetBeingHurt(true);
             }
             else {

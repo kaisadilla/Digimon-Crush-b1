@@ -21,12 +21,12 @@ namespace Kaisa.DigimonCrush.Fighter {
             }
         }
 
-        protected override void Travel() {
-            float moveX = (goingLeft ? -move.Speed : move.Speed ) * Time.deltaTime;
-            float moveY = (diagonal ? -move.Speed : 0f) * Time.deltaTime;
+        /*protected override void Travel() {
+            float moveX = (goingLeft ? -move.Speed.x : move.Speed.x ) * Time.deltaTime;
+            float moveY = (diagonal ? -move.Speed.y : 0f) * Time.deltaTime;
             transform.position += new Vector3(moveX, moveY, 0);
             AdjustScale();
-        }
+        }*/
 
         public void Launch() {
             launched = true;

@@ -366,6 +366,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6dc648025f8b2434d85af18bc23fc5d5, type: 2}
   - {fileID: 11400000, guid: 52eaedd9862237b4aa7dcfcc98944515, type: 2}
   - {fileID: 11400000, guid: fd0a79e79ef8fb049b56da3bd35a2abf, type: 2}
+  - {fileID: 11400000, guid: 723d7aac5ae6ec64bb4b94f23d3f9a75, type: 2}
   grid: {fileID: 331977071}
 --- !u!4 &1553148151
 Transform:
