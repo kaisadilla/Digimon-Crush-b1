@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18cb68df5bce98f4abf03dcb8458e9b1, type: 3}
+  m_Name: blackGuilmon
+  m_EditorClassIdentifier: 
+  id: 7
+  charName: BlackGuilmon
+  charDisplay: {fileID: 1173145895251735657, guid: 1afe9f5e2488c9745b52ec68f19fcc8c,
+    type: 3}
+  selectionSprite: {fileID: 0}

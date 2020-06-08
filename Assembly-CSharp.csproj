@@ -82,6 +82,14 @@
     <Compile Include="Assets\Digimon\BlackAgumon\behavior\moves\BlackAgumon_NegativeCrunch.cs" />
     <Compile Include="Assets\Digimon\BlackAgumon\behavior\moves\BlackAgumon_PepperBreath.cs" />
     <Compile Include="Assets\Digimon\BlackAgumon\behavior\moves\BlackAgumon_PepperBreath_Flying.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\BlackGuilmonAudio.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\BlackGuilmonMovement.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\moves\BlackGuilmon_KurenaiMaru_Empowered.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\moves\BlackGuilmon_PetitDejeuner.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\moves\BlackGuilmon_RockBreaker_Empowered.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\moves\BlackGuilmon_SharpClaw_Empowered.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\moves\BlackGuilmon_WildUppercut.cs" />
+    <Compile Include="Assets\Digimon\BlackGuilmon\behavior\moves\BlackGuilmon_WildUppercut_Empowered.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\GabumonAudio.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\GabumonMovement.cs" />
     <Compile Include="Assets\Digimon\Gabumon\behavior\moves\Gabumon_BassSmash.cs" />
