@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AgumonAudio
     - BlackAgumonAudio
+    - BlackGuilmonAudio
     - GabumonAudio
     - GatomonAudio
     - GridChar
@@ -13,6 +14,7 @@ ScriptsOnlyBuild:
     - Kaisa.DigimonCrush.Fighter.AgumonFighter
     - Kaisa.DigimonCrush.Fighter.AgumonMovement
     - Kaisa.DigimonCrush.Fighter.BlackAgumonMovement
+    - Kaisa.DigimonCrush.Fighter.BlackGuilmonMovement
     - Kaisa.DigimonCrush.Fighter.DigimonAnim
     - Kaisa.DigimonCrush.Fighter.DigimonController
     - Kaisa.DigimonCrush.Fighter.DigimonFighter
@@ -56,7 +58,6 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnimatorStateTransitionInspector
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
@@ -191,6 +192,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14462}
     - Class: 114
       Script: {instanceID: 14490}
+    - Class: 114
+      Script: {instanceID: 52712}
+    - Class: 114
+      Script: {instanceID: 52718}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1099,6 +1104,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 30c412529af2946b4518dc3e6fd2d4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Kaisa.DigimonCrush.Fighter
+    className: BlackGuilmonMovement
+  - hash:
+      serializedVersion: 2
+      Hash: 78f201e9b88ab60f422ac8e2db6cb1c0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BlackGuilmonAudio
   platform: 5
   scenePathNames:
   - Assets/Scenes/SelectionScreen.unity
