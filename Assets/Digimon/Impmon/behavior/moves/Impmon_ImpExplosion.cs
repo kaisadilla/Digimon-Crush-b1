@@ -28,5 +28,16 @@ namespace Kaisa.DigimonCrush.Fighter {
                 user.Anim.TriggerAnim("attack_impExplosion_failed");
             }
         }
+
+        public override void OnEnd(bool interrupted) {
+            if (interrupted) {
+                if (ExplosionHit) {
+                    user.Anim.TriggerAnim("cancel");
+                }
+                else {
+                    user.Anim.TriggerAnim("cancel");
+                }
+            }
+        }
     }
 }

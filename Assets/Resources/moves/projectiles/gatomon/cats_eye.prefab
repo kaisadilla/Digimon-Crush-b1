@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3216138593439454526}
   - component: {fileID: 3898563582111011063}
   - component: {fileID: 8946896320855872581}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: cats_eye
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 8946896320855872581}
+  staticSprite: 0
   user: {fileID: 0}
 --- !u!50 &3216138593439454526
 Rigidbody2D:

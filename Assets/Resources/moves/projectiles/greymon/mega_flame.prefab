@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7422656713334824852}
   - component: {fileID: 3216138593439454526}
   - component: {fileID: 733171148}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: mega_flame
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 7422656713334824852}
+  staticSprite: 0
   user: {fileID: 0}
 --- !u!114 &7422656713334824852
 MonoBehaviour:

@@ -78,6 +78,10 @@ namespace Kaisa.DigimonCrush.Fighter {
         /// The amount of damage that is converted into points.
         /// </summary>
         public float PointConversion { get; protected set; } = 0.5f;
+        /// <summary>
+        /// If true, enemy actions (mainly moves) are interrupted when hit with this move.
+        /// </summary>
+        public bool Interrupt { get; protected set; } = true;
         #endregion
 
         public DigimonFighter user;
@@ -93,8 +97,8 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public virtual void OnStart() { }
         public virtual void OnUpdate() { }
-        public virtual void OnEnd() { }
-        public virtual void OnInterrupt() { }
+        public virtual void OnEnd(bool interrupted) { }
+        //public virtual void OnInterrupt() { }
         public virtual void OnHit(DigimonFighter target) { }
         public virtual void OnDodge(DigimonFighter target) { }
         public virtual void OnFire() { }

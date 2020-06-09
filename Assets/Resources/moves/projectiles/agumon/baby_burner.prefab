@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7846063146600905162}
   - component: {fileID: 4347921893293476507}
   - component: {fileID: 8644232986389725233}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: baby_burner
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 4347921893293476507}
+  staticSprite: 0
   user: {fileID: 0}
 --- !u!114 &4347921893293476507
 MonoBehaviour:

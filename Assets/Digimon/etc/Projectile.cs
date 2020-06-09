@@ -12,10 +12,10 @@ namespace Kaisa.DigimonCrush.Fighter {
         protected bool goingLeft = false;
         protected float initialX;
         protected int hits = 0;
-        protected float scale = 1;
+        protected Vector2 scale = Vector2.zero;
         protected float duration = 0f;
 
-        public virtual void Setup(GameObject user, Collider2D userHitbox, Move move, bool goingLeft, float scale) {
+        public virtual void Setup(GameObject user, Collider2D userHitbox, Move move, bool goingLeft, Vector2 scale) {
             this.user = user;
             this.move = move;
             this.goingLeft = goingLeft;
@@ -53,10 +53,10 @@ namespace Kaisa.DigimonCrush.Fighter {
         protected virtual void AdjustScale() {
             if (!staticSprite) {
                 if (goingLeft) {
-                    transform.localScale = new Vector3(-scale, scale, scale);
+                    transform.localScale = new Vector2(-scale.x, scale.y);
                 }
                 else {
-                    transform.localScale = new Vector3(scale, scale, scale);
+                    transform.localScale = scale;
                 }
             }
         }

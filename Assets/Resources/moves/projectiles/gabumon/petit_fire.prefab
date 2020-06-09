@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1905250106211084592}
   - component: {fileID: 1594268829057162561}
   - component: {fileID: 20561028501219944}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: petit_fire
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}

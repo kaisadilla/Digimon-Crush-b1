@@ -5,7 +5,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public bool charge = true;
         public Renamon_SwiftStrike(DigimonFighter user) : base(user) {
             AnimName = "attack_swiftStrike";
-            BaseDamage = 6f;
+            BaseDamage = 5f;
             Knockback = new Vector2(6, 6);
             KnockbackCount = 3;
             KnockbackMode = KnockbackMode.Last;

@@ -18,7 +18,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             user.Movement.body.gravityScale = 0f;
         }
 
-        public override void OnEnd() {
+        public override void OnEnd(bool interrupted) {
             user.Movement.body.gravityScale = 3f;
             user.Movement.SetGhosted(false);
             user.ForceDisableImmunity();

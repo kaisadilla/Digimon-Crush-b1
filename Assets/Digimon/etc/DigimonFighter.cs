@@ -124,18 +124,16 @@ namespace Kaisa.DigimonCrush.Fighter {
             if (!IsImmune && !Burned) {
                 Audio.Stop();
                 Burned = true;
-                IsImmune = true;
-                Controller.ControlEnabled = false;
                 Movement.SetSpeed(-2f, true);
                 StartCoroutine(EndBurn(duration));
             }
         }
         private IEnumerator EndBurn(float duration) {
             yield return new WaitForSeconds(duration);
-            Controller.ControlEnabled = true;
             Burned = false;
             Movement.SetSpeed(0);
-            yield return new WaitForSeconds(Constants.DEFAULT_IMMUNITY / 2f);
+            IsImmune = true;
+            yield return new WaitForSeconds(Constants.DEFAULT_IMMUNITY);
             IsImmune = false;
         }
 
@@ -148,16 +146,30 @@ namespace Kaisa.DigimonCrush.Fighter {
             Slow = 0f;
         }
         public void ApplySmash(float amount, float duration) {
-            Smash = amount;
-            StartCoroutine(EndSmash(duration));
+            if (!IsSmashed) {
+                Smash = amount;
+                StartCoroutine(EndSmash(duration));
+            }
         }
         private IEnumerator EndSmash(float duration) {
             yield return new WaitForSeconds(duration);
             Smash = 1f;
         }
 
-        public float Scale {
-            get => Enhanced ? 1.5f : 1f;
+        /// <summary>
+        /// Returns the current scale of the Digimon, based on its stats.
+        /// This scale does not account for left-facing transformations and is unrelated
+        /// on the scale of the gameObject associated with the Digimon.
+        /// </summary>
+        public Vector2 Scale {
+            get {
+                float scaleX, scaleY;
+                float baseScale = Enhanced ? 1.5f : 1f;
+                scaleX = baseScale;
+                scaleY = baseScale * (IsSmashed ? Smash : 1f);
+
+                return new Vector2(scaleX, scaleY);
+            }
         }
 
         private Coroutine endImmunity;
@@ -275,7 +287,8 @@ namespace Kaisa.DigimonCrush.Fighter {
 
             Movement.FacingLeft = hitPos.x < transform.position.x;
             SetControllerEnabled(false);
-            Movement.InterruptCurrentMove();
+
+            if (move.Interrupt) Movement.InterruptCurrentMove();
 
             int pointsToLaunch = HPbefore - HPafter;
             while (pointsToLaunch > 0) {

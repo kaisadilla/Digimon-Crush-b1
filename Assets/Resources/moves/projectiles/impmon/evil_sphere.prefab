@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8207878605395191247}
   - component: {fileID: 4574581717837747635}
   - component: {fileID: 1130360043422213340}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: evil_sphere
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}
@@ -170,4 +170,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 4574581717837747635}
+  staticSprite: 0
   user: {fileID: 0}

@@ -247,10 +247,12 @@ namespace Kaisa.DigimonCrush.Fighter {
             return FacingLeft ? new Vector3(-v.x, v.y, v.z) : v;
         }
 
+        public bool IsAttacking => CurrentMove != null;
+
         public void StartCurrentMove() {
             if (CurrentMove != null) {
                 fighter.ForceDisableImmunity();
-                fighter.SetControllerEnabled(CurrentMove.AllowInput);
+                //fighter.SetControllerEnabled(CurrentMove.AllowInput);
                 CurrentMove.OnStart();
             }
         }
@@ -269,16 +271,16 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public void EndCurrentMove() {
             if(CurrentMove != null) {
-                CurrentMove.OnEnd();
-                fighter.SetControllerEnabled(true);
+                CurrentMove.OnEnd(false);
+                //fighter.SetControllerEnabled(true);
                 CurrentMove = null;
             }
         }
 
         public void InterruptCurrentMove(bool enableControl = false) {
             if(CurrentMove != null) {
-                CurrentMove.OnInterrupt();
-                fighter.SetControllerEnabled(enableControl);
+                CurrentMove.OnEnd(true);
+                //fighter.SetControllerEnabled(enableControl);
                 CurrentMove = null;
             }
         }
@@ -293,19 +295,28 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
 
         public GameObject LaunchProjectile(string name, Move move, float offsetX, float offsetY, bool oppositeSide = false) {
+            var offset = ScaleOffset(offsetX, offsetY);
             GameObject prefab = Resources.Load<GameObject>($"moves/projectiles/{name}");
-            Vector3 offset = new Vector3(Directional(-offsetX), -offsetY, 0);
-            GameObject p = Instantiate(prefab, transform.position - offset, prefab.transform.rotation, null);
+            offset = Directional(-offset);
+            GameObject p = Instantiate(prefab, transform.position - (Vector3)offset, prefab.transform.rotation, null);
             p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, FacingLeft ^ oppositeSide, fighter.Scale); //xor: ^
             return p;
         }
 
         public GameObject AttachProjectile(string name, Move move, float offsetX, float offsetY) {
+            var offset = ScaleOffset(offsetX, offsetY);
             GameObject prefab = Resources.Load<GameObject>($"moves/projectiles/{name}");
-            Vector3 offset = new Vector3(Directional(-offsetX), -offsetY, 0);
-            GameObject p = Instantiate(prefab, transform.position - offset, Quaternion.Euler(0, 0, 0), fighter.transform);
+            offset = Directional(-offset);
+            GameObject p = Instantiate(prefab, transform.position - (Vector3)offset, prefab.transform.rotation, fighter.transform);
             p.GetComponent<Projectile>().Setup(gameObject, fighter.Hitbox, move, false, fighter.Scale);
             return p;
+        }
+
+        public Vector2 ScaleOffset(float offsetX, float offsetY) {
+            var scale = fighter.Scale;
+            offsetX *= scale.x;
+            offsetY *= scale.y;
+            return new Vector3(offsetX, offsetY);
         }
 
         public GameObject LaunchProjectile(string name, Move move) {
@@ -318,16 +329,10 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public void SetGhosted(bool ghosted) {
             if (ghosted) {
-                fighter.gameObject.layer = Constants.layerGhostedPlayer;
-                foreach(Transform child in fighter.transform) {
-                    child.gameObject.layer = Constants.layerGhostedPlayer;
-                }
+                gameObject.layer = Constants.layerGhostedPlayer;
             }
             else {
-                fighter.gameObject.layer = Constants.layerPlayer;
-                foreach (Transform child in fighter.transform) {
-                    child.gameObject.layer = Constants.layerPlayer;
-                }
+                gameObject.layer = Constants.layerPlayer;
             }
         }
 
@@ -374,6 +379,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public virtual void AssignMove(Move m) {
             if (m == null) return;
 
+            EndCurrentMove();
             if (m.InternalId >= 0) {
                 if (Cooldowns[m.InternalId] <= 0f) {
                     Cooldowns[m.InternalId] = m.Cooldown;

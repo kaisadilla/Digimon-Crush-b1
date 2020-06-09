@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1287054714174250678}
   - component: {fileID: 2113151781423582596}
   - component: {fileID: 2940608973802440565}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: badaboom
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 1287054714174250678}
+  staticSprite: 0
   user: {fileID: 0}
   body: {fileID: 3216138593439454526}
 --- !u!50 &3216138593439454526

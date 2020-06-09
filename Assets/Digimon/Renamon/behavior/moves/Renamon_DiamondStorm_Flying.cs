@@ -10,6 +10,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             Speed = new Vector2(14f, -14f);
             Duration = 1f;
             EndOnEnter = true;
+            Immunity = 0f;
         }
 
         public override void OnUpdate() {

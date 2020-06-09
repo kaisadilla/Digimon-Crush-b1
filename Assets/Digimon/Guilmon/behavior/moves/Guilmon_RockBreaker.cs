@@ -5,7 +5,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         public Guilmon_RockBreaker(DigimonFighter user) : base(user) {
             AnimName = "attack_rockBreaker";
             BaseDamage = 4f;
-            Knockback = new Vector2(5, 0);
+            Knockback = new Vector2(4, 0);
             EndOnEnter = true;
         }
     }

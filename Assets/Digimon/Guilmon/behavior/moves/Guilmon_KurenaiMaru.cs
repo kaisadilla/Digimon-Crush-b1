@@ -4,13 +4,16 @@ namespace Kaisa.DigimonCrush.Fighter {
     public class Guilmon_KurenaiMaru : Move {
         public Guilmon_KurenaiMaru(DigimonFighter user) : base(user) {
             AnimName = "attack_kurenaiMaru";
-            BaseDamage = 8f;
+            BaseDamage = 7.5f;
             Knockback = new Vector2(0, 5);
             EndOnEnter = true;
             InternalId = 0;
             Cooldown = 3f;
         }
 
+        public override void OnStart() {
+            user.Movement.SetGhosted(true);
+        }
         public override void OnDodge(DigimonFighter target) {
             target.AddEnergy(-target.MaxEnergy);
             user.EnableImmunity(1.5f);
@@ -19,6 +22,9 @@ namespace Kaisa.DigimonCrush.Fighter {
         }
         public override void OnUpdate() {
             user.Movement.SetSpeed(new Vector2(1.5f, 0f), true);
+        }
+        public override void OnEnd(bool interrupted) {
+            user.Movement.SetGhosted(false);
         }
     }
 }

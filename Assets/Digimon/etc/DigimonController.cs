@@ -16,7 +16,9 @@ namespace Kaisa.DigimonCrush.Fighter {
 
         public bool CanAttack {
             get {
-                if (fighter.Paralyzed || fighter.Burned) {
+                if (fighter.Paralyzed || fighter.Burned
+                    || (fighter.Movement.IsAttacking && !fighter.Movement.CurrentMove.AllowInput))
+                {
                     return false;
                 }
                 else return ControlEnabled;

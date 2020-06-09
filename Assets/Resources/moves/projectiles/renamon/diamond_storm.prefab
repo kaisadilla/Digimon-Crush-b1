@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1905250106211084592}
   - component: {fileID: 5464990294754413784}
   - component: {fileID: 2810450632428472009}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: diamond_storm
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2810450632428472009}
+  staticSprite: 0
   user: {fileID: 0}
   diagonal: 0
 --- !u!114 &2810450632428472009

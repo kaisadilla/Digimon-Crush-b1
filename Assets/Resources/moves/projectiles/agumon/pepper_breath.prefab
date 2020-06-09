@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5160718900175560422}
   - component: {fileID: 8999757064407272608}
   - component: {fileID: 3072688972782819479}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: pepper_breath
   m_TagString: AttackHitbox
   m_Icon: {fileID: 0}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 8999757064407272608}
+  staticSprite: 0
   user: {fileID: 0}
 --- !u!114 &8999757064407272608
 MonoBehaviour:

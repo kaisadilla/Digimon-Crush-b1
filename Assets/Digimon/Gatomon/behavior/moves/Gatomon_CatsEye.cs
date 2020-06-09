@@ -8,8 +8,9 @@ namespace Kaisa.DigimonCrush.Fighter {
             AnimName = "attack_catsEye";
             BaseDamage = 5f;
             KnockbackCount = 0;
-            Speed = new Vector2(12f, 0f);
+            Speed = new Vector2(14f, 0f);
             Duration = 0.85f;
+            Interrupt = false;
         }
 
         public override void OnFire() {

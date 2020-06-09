@@ -13,7 +13,7 @@ namespace Kaisa.DigimonCrush.Fighter {
             user.Movement.SetSpeed(new Vector2(1.75f, 0f), true);
         }
 
-        public override void OnEnd() {
+        public override void OnEnd(bool interrupted) {
             user.Movement.SetSpeed(0f, true);
         }
     }

@@ -5,7 +5,7 @@ namespace Kaisa.DigimonCrush.Fighter {
         private int totalHits = 0;
         public Guilmon_SharpClaw(DigimonFighter user) : base(user) {
             AnimName = "attack_sharpClaw";
-            BaseDamage = 4f;
+            BaseDamage = 3.5f;
             EndOnEnter = true;
             KnockbackCount = -1;
         }
